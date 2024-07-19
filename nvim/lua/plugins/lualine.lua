@@ -2,10 +2,26 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
+    local custom_horizon = require("lualine.themes.horizon")
+    custom_horizon.normal.c.bg = nil
+    custom_horizon.insert.c.bg = nil
+    custom_horizon.command.c.bg = nil
+    custom_horizon.visual.c.bg = nil
+
+    custom_horizon.normal.a.bg = "#c8c093"
+    custom_horizon.insert.a.bg = "#7aa89f"
+    custom_horizon.command.a.bg = "#98bb6c"
+    custom_horizon.visual.a.bg = "#938aa9"
+
+    custom_horizon.normal.b.fg = "##090618"
+    custom_horizon.insert.b.fg = "##090618"
+    custom_horizon.visual.b.fg = "##090618"
+    custom_horizon.command.b.fg = "##090618"
+
     require("lualine").setup({
       options = {
         icons_enabled = true,
-        theme = "horizon",
+        theme = custom_horizon,
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
         disabled_filetypes = {
@@ -14,7 +30,7 @@ return {
         },
         ignore_focus = {},
         always_divide_middle = true,
-        globalstatus = false,
+        globalstatus = true,
         refresh = {
           statusline = 1000,
           tabline = 1000,

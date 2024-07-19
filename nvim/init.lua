@@ -11,5 +11,6 @@ vim.keymap.set("n", "<leader>rn", ":IncRename ")
 vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
     vim.cmd("KanagawaCompile")
+    vim.cmd("set laststatus=0")
   end,
 })
