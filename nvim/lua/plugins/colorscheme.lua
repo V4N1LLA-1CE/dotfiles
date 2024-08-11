@@ -443,3 +443,12 @@ return {
     vim.cmd("colorscheme kanagawa-wave")
   end,
 }
+
+-- return {
+--   {
+--     "jim-at-jibba/ariake.nvim",
+--     config = function()
+--       vim.cmd.colorscheme("ariake")
+--     end,
+--   },
+-- }
