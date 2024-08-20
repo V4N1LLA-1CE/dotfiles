@@ -28,3 +28,7 @@ vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.path:append({ "**" })
 vim.opt.mouse = ""
 vim.opt.formatoptions:append({ "r" })
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  virtual_text = false,
+})
