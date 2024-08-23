@@ -8,9 +8,9 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
 vim.keymap.set("n", "<C-p>", builtin.find_files, {})
 vim.keymap.set("n", "<leader>rn", ":IncRename ")
 
--- vim.api.nvim_create_autocmd("VimEnter", {
---   callback = function()
---     vim.cmd("KanagawaCompile")
---     vim.cmd("set laststatus=0")
---   end,
--- })
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("KanagawaCompile")
+    vim.cmd("set laststatus=0")
+  end,
+})

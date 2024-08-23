@@ -384,65 +384,65 @@
 -- }
 
 -- kanagawa
--- return {
---   "rebelot/kanagawa.nvim",
---   config = function()
---     -- Default options:
---     require("kanagawa").setup({
---       compile = true, -- enable compiling the colorscheme
---       undercurl = true, -- enable undercurls
---       commentStyle = { italic = true },
---       functionStyle = {},
---       keywordStyle = { italic = true },
---       statementStyle = { bold = true },
---       typeStyle = {},
---       transparent = true, -- do not set background color
---       dimInactive = false, -- dim inactive window `:h hl-NormalNC`
---       terminalColors = true, -- define vim.g.terminal_color_{0,17}
---       colors = {
---         theme = {
---           all = {
---             ui = {
---               bg_gutter = "none",
---             },
---           },
---         },
---       },
---
---       overrides = function(colors) -- add/modify highlights
---         local theme = colors.theme
---         return {
---           NormalFloat = { bg = "none" },
---           FloatBorder = { bg = "none" },
---           FloatTitle = { bg = "none" },
---
---           -- Save an hlgroup with dark background and dimmed foreground
---           -- so that you can use it where your still want darker windows.
---           -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
---           NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
---
---           LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
---           MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
---           TelescopeTitle = { fg = theme.ui.special, bold = true },
---           TelescopePromptNormal = { bg = "none" },
---           TelescopePromptBorder = { fg = "none", bg = "none" },
---           TelescopeResultsNormal = { fg = "none", bg = "none" },
---           TelescopeResultsBorder = { fg = "none", bg = "none" },
---           TelescopePreviewNormal = { bg = "none" },
---           TelescopePreviewBorder = { bg = "none", fg = "none" },
---         }
---       end,
---       theme = "wave", -- Load "wave" theme when 'background' option is not set
---       background = { -- map the value of 'background' option to a theme
---         dark = "wave", -- try "dragon" !
---         light = "lotus",
---       },
---     })
---
---     -- setup must be called before loading
---     vim.cmd("colorscheme kanagawa-wave")
---   end,
--- }
+return {
+  "rebelot/kanagawa.nvim",
+  config = function()
+    -- Default options:
+    require("kanagawa").setup({
+      compile = true, -- enable compiling the colorscheme
+      undercurl = true, -- enable undercurls
+      commentStyle = { italic = true },
+      functionStyle = {},
+      keywordStyle = { italic = true },
+      statementStyle = { bold = true },
+      typeStyle = {},
+      transparent = true, -- do not set background color
+      dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+      terminalColors = true, -- define vim.g.terminal_color_{0,17}
+      colors = {
+        theme = {
+          all = {
+            ui = {
+              bg_gutter = "none",
+            },
+          },
+        },
+      },
+
+      overrides = function(colors) -- add/modify highlights
+        local theme = colors.theme
+        return {
+          NormalFloat = { bg = "none" },
+          FloatBorder = { bg = "none" },
+          FloatTitle = { bg = "none" },
+
+          -- Save an hlgroup with dark background and dimmed foreground
+          -- so that you can use it where your still want darker windows.
+          -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
+          NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+
+          LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+          MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+          TelescopeTitle = { fg = theme.ui.special, bold = true },
+          TelescopePromptNormal = { bg = "none" },
+          TelescopePromptBorder = { fg = "none", bg = "none" },
+          TelescopeResultsNormal = { fg = "none", bg = "none" },
+          TelescopeResultsBorder = { fg = "none", bg = "none" },
+          TelescopePreviewNormal = { bg = "none" },
+          TelescopePreviewBorder = { bg = "none", fg = "none" },
+        }
+      end,
+      theme = "wave", -- Load "wave" theme when 'background' option is not set
+      background = { -- map the value of 'background' option to a theme
+        dark = "wave", -- try "dragon" !
+        light = "lotus",
+      },
+    })
+
+    -- setup must be called before loading
+    vim.cmd("colorscheme kanagawa-wave")
+  end,
+}
 
 -- return {
 --   {
@@ -453,31 +453,31 @@
 --   },
 -- }
 
-return {
-  "tiagovla/tokyodark.nvim",
-  opts = {
-    -- custom options here
-  },
-  config = function()
-    require("tokyodark").setup({
-      transparent_background = true, -- set background to transparent
-      gamma = 1.00, -- adjust the brightness of the theme
-      styles = {
-        comments = { italic = true }, -- style for comments
-        keywords = { italic = true }, -- style for keywords
-        identifiers = { italic = true }, -- style for identifiers
-        functions = {}, -- style for functions
-        variables = {}, -- style for variables
-      },
-      custom_highlights = {} or function(highlights, palette)
-        return {}
-      end, -- extend highlights
-      custom_palette = {} or function(palette)
-        return {}
-      end, -- extend palette
-      terminal_colors = true, -- enable terminal colors
-    })
-
-    vim.cmd([[colorscheme tokyodark]])
-  end,
-}
+-- return {
+--   "tiagovla/tokyodark.nvim",
+--   opts = {
+--     -- custom options here
+--   },
+--   config = function()
+--     require("tokyodark").setup({
+--       transparent_background = true, -- set background to transparent
+--       gamma = 1.00, -- adjust the brightness of the theme
+--       styles = {
+--         comments = { italic = true }, -- style for comments
+--         keywords = { italic = true }, -- style for keywords
+--         identifiers = { italic = true }, -- style for identifiers
+--         functions = {}, -- style for functions
+--         variables = {}, -- style for variables
+--       },
+--       custom_highlights = {} or function(highlights, palette)
+--         return {}
+--       end, -- extend highlights
+--       custom_palette = {} or function(palette)
+--         return {}
+--       end, -- extend palette
+--       terminal_colors = true, -- enable terminal colors
+--     })
+--
+--     vim.cmd([[colorscheme tokyodark]])
+--   end,
+-- }
