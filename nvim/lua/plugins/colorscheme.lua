@@ -12,6 +12,27 @@
 --   },
 -- }
 
+-- nord nvim
+-- return {
+--   {
+--     "shaunsingh/nord.nvim",
+--     priority = 1000,
+--     config = function()
+--       require("lualine").setup({
+--         options = {
+--           nord_disable_background = false,
+--           theme = "nord",
+--           nord_italic = true,
+--           nord_bold = true,
+--           -- ... your lualine config
+--         },
+--       })
+--
+--       vim.cmd([[colorscheme nord]])
+--     end,
+--   },
+-- }
+
 -- tokyonight colors
 -- return {
 --   "folke/tokyonight.nvim",
@@ -384,65 +405,65 @@
 -- }
 
 -- kanagawa
-return {
-  "rebelot/kanagawa.nvim",
-  config = function()
-    -- Default options:
-    require("kanagawa").setup({
-      compile = true, -- enable compiling the colorscheme
-      undercurl = true, -- enable undercurls
-      commentStyle = { italic = true },
-      functionStyle = {},
-      keywordStyle = { italic = true },
-      statementStyle = { bold = true },
-      typeStyle = {},
-      transparent = true, -- do not set background color
-      dimInactive = false, -- dim inactive window `:h hl-NormalNC`
-      terminalColors = true, -- define vim.g.terminal_color_{0,17}
-      colors = {
-        theme = {
-          all = {
-            ui = {
-              bg_gutter = "none",
-            },
-          },
-        },
-      },
-
-      overrides = function(colors) -- add/modify highlights
-        local theme = colors.theme
-        return {
-          NormalFloat = { bg = "none" },
-          FloatBorder = { bg = "none" },
-          FloatTitle = { bg = "none" },
-
-          -- Save an hlgroup with dark background and dimmed foreground
-          -- so that you can use it where your still want darker windows.
-          -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
-          NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
-
-          LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-          MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-          TelescopeTitle = { fg = theme.ui.special, bold = true },
-          TelescopePromptNormal = { bg = "none" },
-          TelescopePromptBorder = { fg = "none", bg = "none" },
-          TelescopeResultsNormal = { fg = "none", bg = "none" },
-          TelescopeResultsBorder = { fg = "none", bg = "none" },
-          TelescopePreviewNormal = { bg = "none" },
-          TelescopePreviewBorder = { bg = "none", fg = "none" },
-        }
-      end,
-      theme = "wave", -- Load "wave" theme when 'background' option is not set
-      background = { -- map the value of 'background' option to a theme
-        dark = "wave", -- try "dragon" !
-        light = "lotus",
-      },
-    })
-
-    -- setup must be called before loading
-    vim.cmd("colorscheme kanagawa-wave")
-  end,
-}
+-- return {
+--   "rebelot/kanagawa.nvim",
+--   config = function()
+--     -- Default options:
+--     require("kanagawa").setup({
+--       compile = true, -- enable compiling the colorscheme
+--       undercurl = true, -- enable undercurls
+--       commentStyle = { italic = true },
+--       functionStyle = {},
+--       keywordStyle = { italic = true },
+--       statementStyle = { bold = true },
+--       typeStyle = {},
+--       transparent = true, -- do not set background color
+--       dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+--       terminalColors = true, -- define vim.g.terminal_color_{0,17}
+--       colors = {
+--         theme = {
+--           all = {
+--             ui = {
+--               bg_gutter = "none",
+--             },
+--           },
+--         },
+--       },
+--
+--       overrides = function(colors) -- add/modify highlights
+--         local theme = colors.theme
+--         return {
+--           NormalFloat = { bg = "none" },
+--           FloatBorder = { bg = "none" },
+--           FloatTitle = { bg = "none" },
+--
+--           -- Save an hlgroup with dark background and dimmed foreground
+--           -- so that you can use it where your still want darker windows.
+--           -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
+--           NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+--
+--           LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+--           MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+--           TelescopeTitle = { fg = theme.ui.special, bold = true },
+--           TelescopePromptNormal = { bg = "none" },
+--           TelescopePromptBorder = { fg = "none", bg = "none" },
+--           TelescopeResultsNormal = { fg = "none", bg = "none" },
+--           TelescopeResultsBorder = { fg = "none", bg = "none" },
+--           TelescopePreviewNormal = { bg = "none" },
+--           TelescopePreviewBorder = { bg = "none", fg = "none" },
+--         }
+--       end,
+--       theme = "wave", -- Load "wave" theme when 'background' option is not set
+--       background = { -- map the value of 'background' option to a theme
+--         dark = "wave", -- try "dragon" !
+--         light = "lotus",
+--       },
+--     })
+--
+--     -- setup must be called before loading
+--     vim.cmd("colorscheme kanagawa-wave")
+--   end,
+-- }
 
 -- return {
 --   {
@@ -481,3 +502,38 @@ return {
 --     vim.cmd([[colorscheme tokyodark]])
 --   end,
 -- }
+
+return {
+  {
+    "rmehri01/onenord.nvim",
+    priority = 1000,
+    config = function()
+      require("onenord").setup({
+        theme = "dark", -- "dark" or "light". Alternatively, remove the option and set vim.o.background instead
+        borders = true, -- Split window borders
+        fade_nc = false, -- Fade non-current windows, making them more distinguishable
+        -- Style that is applied to various groups: see `highlight-args` for options
+        styles = {
+          comments = "NONE",
+          strings = "NONE",
+          keywords = "NONE",
+          functions = "NONE",
+          variables = "NONE",
+          diagnostics = "underline",
+        },
+        disable = {
+          background = true, -- Disable setting the background color
+          float_background = true, -- Disable setting the background color for floating windows
+          cursorline = false, -- Disable the cursorline
+          eob_lines = true, -- Hide the end-of-buffer lines
+        },
+        -- Inverse highlight for different groups
+        inverse = {
+          match_paren = false,
+        },
+        custom_highlights = {}, -- Overwrite default highlight groups
+        custom_colors = {}, -- Overwrite default colors
+      })
+    end,
+  },
+}
