@@ -514,11 +514,11 @@ return {
         fade_nc = false, -- Fade non-current windows, making them more distinguishable
         -- Style that is applied to various groups: see `highlight-args` for options
         styles = {
-          comments = "NONE",
+          comments = "italic",
           strings = "NONE",
-          keywords = "NONE",
-          functions = "NONE",
-          variables = "NONE",
+          keywords = "bold",
+          functions = "bold",
+          variables = "bold",
           diagnostics = "underline",
         },
         disable = {
