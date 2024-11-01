@@ -124,85 +124,118 @@
 -- }
 
 -- rose-pine
--- return {
---   "rose-pine/neovim",
---   name = "rose-pine",
---   priority = 1000,
---
---   config = function()
---     require("rose-pine").setup({
---       variant = "auto", -- auto, main, moon, or dawn
---       dark_variant = "main", -- main, moon, or dawn
---       dim_inactive_windows = false,
---       extend_background_behind_borders = true,
---
---       enable = {
---         terminal = true,
---         legacy_highlights = true, -- improve compatibility for previous versions of neovim
---         migrations = true, -- handle deprecated options automatically
---       },
---
---       styles = {
---         bold = true,
---         italic = true,
---         transparency = true,
---       },
---
---       groups = {
---         border = "muted",
---         link = "iris",
---         panel = "surface",
---
---         error = "love",
---         hint = "iris",
---         info = "foam",
---         note = "pine",
---         todo = "rose",
---         warn = "gold",
---
---         git_add = "foam",
---         git_change = "rose",
---         git_delete = "love",
---         git_dirty = "rose",
---         git_ignore = "muted",
---         git_merge = "iris",
---         git_rename = "pine",
---         git_stage = "iris",
---         git_text = "rose",
---         git_untracked = "subtle",
---
---         h1 = "iris",
---         h2 = "foam",
---         h3 = "rose",
---         h4 = "gold",
---         h5 = "pine",
---         h6 = "foam",
---       },
---
---       highlight_groups = {
---         -- comment = { fg = "foam" },
---         -- vertsplit = { fg = "muted", bg = "muted" },
---       },
---
---       before_highlight = function(group, highlight, palette)
---         -- disable all undercurls
---         -- if highlight.undercurl then
---         --     highlight.undercurl = false
---         -- end
---         --
---         -- change palette colour
---         -- if highlight.fg == palette.pine then
---         --     highlight.fg = palette.foam
---         -- end
---       end,
---     })
---
---     vim.cmd("colorscheme rose-pine")
---     -- vim.cmd("colorscheme rose-pine-main")
---     -- vim.cmd("colorscheme rose-pine-moon")
---     -- vim.cmd("colorscheme rose-pine-dawn")
---   end,
--- }
+return {
+  "rose-pine/neovim",
+  name = "rose-pine",
+  priority = 1000,
+  config = function()
+    require("rose-pine").setup({
+      variant = "auto",
+      dark_variant = "main",
+      dim_inactive_windows = false,
+      extend_background_behind_borders = true,
+      enable = {
+        terminal = true,
+        legacy_highlights = true,
+        migrations = true,
+      },
+      styles = {
+        bold = true,
+        italic = true,
+        transparency = true,
+      },
+      groups = {
+        border = "muted",
+        link = "iris",
+        panel = "surface",
+        error = "love",
+        hint = "iris",
+        info = "foam",
+        note = "pine",
+        todo = "rose",
+        warn = "gold",
+        git_add = "foam",
+        git_change = "rose",
+        git_delete = "love",
+        git_dirty = "rose",
+        git_ignore = "muted",
+        git_merge = "iris",
+        git_rename = "pine",
+        git_stage = "iris",
+        git_text = "rose",
+        git_untracked = "subtle",
+        h1 = "iris",
+        h2 = "foam",
+        h3 = "rose",
+        h4 = "gold",
+        h5 = "pine",
+        h6 = "foam",
+      },
+      highlight_groups = {
+
+        -- Cursor highlights
+        Cursor = { fg = "base", bg = "love" },
+        iCursor = { fg = "base", bg = "gold" },
+        vCursor = { fg = "base", bg = "iris" },
+        Cursorline = { bg = "surface", blend = 99 },
+        Visual = { bg = "rose", fg = "base" },
+        -- Comments (only italic elements)
+        Comment = { fg = "muted", italic = true },
+        ["@comment"] = { fg = "muted", italic = true },
+        -- Keywords and control flow (bold only)
+        Keyword = { fg = "pine", bold = true, italic = false },
+        ["@keyword"] = { fg = "pine", bold = true, italic = false },
+        Conditional = { fg = "pine", bold = true, italic = false },
+        ["@conditional"] = { fg = "pine", bold = true, italic = false },
+        Repeat = { fg = "pine", bold = true, italic = false },
+        ["@repeat"] = { fg = "pine", bold = true, italic = false },
+        -- Functions (bold only)
+        Function = { fg = "foam", bold = true, italic = false },
+        ["@function"] = { fg = "foam", bold = true, italic = false },
+        ["@method"] = { fg = "foam", bold = true, italic = false },
+        -- Types (bold only)
+        Type = { fg = "gold", bold = true, italic = false },
+        ["@type"] = { fg = "gold", bold = true, italic = false },
+        ["@type.builtin"] = { fg = "gold", bold = true, italic = false },
+        -- Variables and parameters (bold only)
+        ["@variable"] = { fg = "text", bold = true, italic = false },
+        ["@parameter"] = { fg = "rose", bold = true, italic = false },
+        -- String and text (bold only)
+        String = { fg = "gold", bold = true, italic = false },
+        ["@string"] = { fg = "gold", bold = true, italic = false },
+        -- Important keywords (bold only)
+        Include = { fg = "pine", bold = true, italic = false },
+        ["@include"] = { fg = "pine", bold = true, italic = false },
+        -- Constants (bold only)
+        Constant = { fg = "gold", bold = true, italic = false },
+        ["@constant"] = { fg = "gold", bold = true, italic = false },
+        ["@constant.builtin"] = { fg = "gold", bold = true, italic = false },
+        -- Operators (bold only)
+        Operator = { fg = "rose", bold = true, italic = false },
+        ["@operator"] = { fg = "rose", bold = true, italic = false },
+        -- Diagnostics (underline)
+        DiagnosticUnderlineError = { sp = "love", undercurl = true },
+        DiagnosticUnderlineWarn = { sp = "gold", undercurl = true },
+        DiagnosticUnderlineInfo = { sp = "foam", undercurl = true },
+        DiagnosticUnderlineHint = { sp = "iris", undercurl = true },
+      },
+      before_highlight = function(group, highlight, palette)
+        if group == "Cursor" then
+          highlight.bold = true
+        end
+        -- Ensure italics are disabled for all groups except comments
+        if group ~= "Comment" and group ~= "@comment" then
+          highlight.italic = false
+        end
+      end,
+    })
+    -- Set the colorscheme
+    vim.cmd("colorscheme rose-pine-main")
+    -- Additional cursor settings for better visibility
+    vim.opt.cursorline = true
+    vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-iCursor,r-cr:hor20,o:hor50"
+  end,
+}
 
 -- one dark
 -- return {
@@ -503,37 +536,37 @@
 --   end,
 -- }
 
-return {
-  {
-    "rmehri01/onenord.nvim",
-    priority = 1000,
-    config = function()
-      require("onenord").setup({
-        theme = "dark", -- "dark" or "light". Alternatively, remove the option and set vim.o.background instead
-        borders = true, -- Split window borders
-        fade_nc = false, -- Fade non-current windows, making them more distinguishable
-        -- Style that is applied to various groups: see `highlight-args` for options
-        styles = {
-          comments = "italic",
-          strings = "NONE",
-          keywords = "bold",
-          functions = "bold",
-          variables = "bold",
-          diagnostics = "underline",
-        },
-        disable = {
-          background = true, -- Disable setting the background color
-          float_background = true, -- Disable setting the background color for floating windows
-          cursorline = false, -- Disable the cursorline
-          eob_lines = true, -- Hide the end-of-buffer lines
-        },
-        -- Inverse highlight for different groups
-        inverse = {
-          match_paren = false,
-        },
-        custom_highlights = {}, -- Overwrite default highlight groups
-        custom_colors = {}, -- Overwrite default colors
-      })
-    end,
-  },
-}
+-- return {
+--   {
+--     "rmehri01/onenord.nvim",
+--     priority = 1000,
+--     config = function()
+--       require("onenord").setup({
+--         theme = "dark", -- "dark" or "light". Alternatively, remove the option and set vim.o.background instead
+--         borders = true, -- Split window borders
+--         fade_nc = false, -- Fade non-current windows, making them more distinguishable
+--         -- Style that is applied to various groups: see `highlight-args` for options
+--         styles = {
+--           comments = "italic",
+--           strings = "bold",
+--           keywords = "bold",
+--           functions = "bold",
+--           variables = "bold",
+--           diagnostics = "underline",
+--         },
+--         disable = {
+--           background = true, -- Disable setting the background color
+--           float_background = true, -- Disable setting the background color for floating windows
+--           cursorline = false, -- Disable the cursorline
+--           eob_lines = true, -- Hide the end-of-buffer lines
+--         },
+--         -- Inverse highlight for different groups
+--         inverse = {
+--           match_paren = false,
+--         },
+--         custom_highlights = {}, -- Overwrite default highlight groups
+--         custom_colors = {}, -- Overwrite default colors
+--       })
+--     end,
+--   },
+-- }

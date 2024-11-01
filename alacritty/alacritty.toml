@@ -1,6 +1,7 @@
 import = [
-  "~/.config/alacritty/themes/themes/nord.toml"
+  "~/.config/alacritty/themes/themes/embark.toml"
 ]
+# good themes: coolnight, tokyonight, catppuccin, kanagawa, deep_space, nord/nordic, rose-pine, embark
 
 [env]
 TERM = "xterm-256color"
@@ -8,10 +9,11 @@ TERM = "xterm-256color"
 padding.x = 10
 padding.y = 10
 
+# decorations = "transparent"
 decorations = "buttonless"
 
-opacity = 0.75
-blur = true
+opacity = 0.9
+blur = false
 
 option_as_alt = "Both"
 

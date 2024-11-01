@@ -1,5 +1,3 @@
--- vim.g.material_style = "deep ocean"
-
 vim.g.mapleader = " "
 
 vim.scriptencoding = "utf-8"
