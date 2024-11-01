@@ -179,6 +179,11 @@ return {
         vCursor = { fg = "base", bg = "iris" },
         Cursorline = { bg = "surface", blend = 99 },
         Visual = { bg = "rose", fg = "base" },
+
+        LspReferenceText = { bg = "muted", blend = 98 },
+        LspReferenceRead = { bg = "muted", blend = 98 },
+        LspReferenceWrite = { bg = "muted", blend = 98 },
+
         -- Comments (only italic elements)
         Comment = { fg = "muted", italic = true },
         ["@comment"] = { fg = "muted", italic = true },
