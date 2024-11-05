@@ -177,12 +177,12 @@ return {
         Cursor = { fg = "base", bg = "love" },
         iCursor = { fg = "base", bg = "gold" },
         vCursor = { fg = "base", bg = "iris" },
-        Cursorline = { bg = "surface", blend = 99 },
+        Cursorline = { bg = "surface" },
         Visual = { bg = "rose", fg = "base" },
 
-        LspReferenceText = { bg = "muted", blend = 98 },
-        LspReferenceRead = { bg = "muted", blend = 98 },
-        LspReferenceWrite = { bg = "muted", blend = 98 },
+        -- LspReferenceText = { bg = "muted", fg = "base" },
+        -- LspReferenceRead = { bg = "muted", fg = "base" },
+        -- LspReferenceWrite = { bg = "muted", fg = "base" },
 
         -- Comments (only italic elements)
         Comment = { fg = "muted", italic = true },
@@ -377,7 +377,7 @@ return {
 --   end,
 -- }
 
--- Dracula (BROKEN)
+-- Dracula
 -- return {
 --   "Mofiqul/dracula.nvim",
 --   priority = 1000,
@@ -507,7 +507,26 @@ return {
 --   {
 --     "jim-at-jibba/ariake.nvim",
 --     config = function()
+--       -- Set transparent backgrounds for various UI elements
+--       vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+--       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+--       vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" }) -- Non-current windows
+--       vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE" }) -- Line numbers
+--       vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" }) -- Sign column (next to line numbers)
+--       vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" }) -- Floating window borders
+--       vim.api.nvim_set_hl(0, "Pmenu", { bg = "NONE" }) -- Popup menu
+--
+--       -- Load the colorscheme
 --       vim.cmd.colorscheme("ariake")
+--
+--       -- Reapply transparent backgrounds after colorscheme load
+--       vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+--       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+--       vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
+--       vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE" })
+--       vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
+--       vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
+--       vim.api.nvim_set_hl(0, "Pmenu", { bg = "NONE" })
 --     end,
 --   },
 -- }
