@@ -1,4 +1,4 @@
-import = [
+general.import = [
   "~/.config/alacritty/themes/themes/embark.toml"
 ]
 # good themes: coolnight, tokyonight, catppuccin, kanagawa, deep_space, nord/nordic, rose-pine, embark
@@ -11,6 +11,7 @@ padding.y = 10
 
 # decorations = "transparent"
 decorations = "buttonless"
+# decorations = "none"
 
 opacity = 0.95
 blur = false
