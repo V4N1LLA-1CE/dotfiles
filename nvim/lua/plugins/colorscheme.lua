@@ -12,27 +12,6 @@
 --   },
 -- }
 
--- nord nvim
--- return {
---   {
---     "shaunsingh/nord.nvim",
---     priority = 1000,
---     config = function()
---       require("lualine").setup({
---         options = {
---           nord_disable_background = false,
---           theme = "nord",
---           nord_italic = true,
---           nord_bold = true,
---           -- ... your lualine config
---         },
---       })
---
---       vim.cmd([[colorscheme nord]])
---     end,
---   },
--- }
-
 -- tokyonight colors
 -- return {
 --   "folke/tokyonight.nvim",
@@ -237,7 +216,7 @@ return {
     -- Set the colorscheme
     vim.cmd("colorscheme rose-pine-main")
     -- Additional cursor settings for better visibility
-    vim.opt.cursorline = true
+    vim.opt.cursorline = false
     vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-iCursor,r-cr:hor20,o:hor50"
   end,
 }
@@ -501,34 +480,6 @@ return {
 --     -- setup must be called before loading
 --     vim.cmd("colorscheme kanagawa-wave")
 --   end,
--- }
-
--- return {
---   {
---     "jim-at-jibba/ariake.nvim",
---     config = function()
---       -- Set transparent backgrounds for various UI elements
---       vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
---       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
---       vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" }) -- Non-current windows
---       vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE" }) -- Line numbers
---       vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" }) -- Sign column (next to line numbers)
---       vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" }) -- Floating window borders
---       vim.api.nvim_set_hl(0, "Pmenu", { bg = "NONE" }) -- Popup menu
---
---       -- Load the colorscheme
---       vim.cmd.colorscheme("ariake")
---
---       -- Reapply transparent backgrounds after colorscheme load
---       vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
---       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
---       vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
---       vim.api.nvim_set_hl(0, "LineNr", { bg = "NONE" })
---       vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
---       vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
---       vim.api.nvim_set_hl(0, "Pmenu", { bg = "NONE" })
---     end,
---   },
 -- }
 
 -- return {

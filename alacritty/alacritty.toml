@@ -13,28 +13,26 @@ padding.y = 10
 decorations = "buttonless"
 # decorations = "none"
 
-opacity = 0.95
-blur = false
+opacity = 0.8
+blur = true
 
 option_as_alt = "Both"
 
 [font]
-# normal.family = "MesloLGS Nerd Font Mono"
 size = 17
 
 [font.normal]
+# family = "MesloLGS Nerd Font Mono"
 family = "JetBrainsMono Nerd Font"
+# family = "FiraCode Nerd Font"
 style = "Regular"
 
 [ font.bold ]
-family = "JetBrainsMono Nerd Font"
 style = "Bold"
 
 [ font.italic ]
-family = "JetBrainsMono Nerd Font"
 style = "Italic"
 
 [ font.bold_italic ]
-family = "JetBrainsMono Nerd Font"
 style = "Bold Italic"
 
