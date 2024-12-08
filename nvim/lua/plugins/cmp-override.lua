@@ -22,8 +22,9 @@ return {
     }
 
     -- Add this highlighting config
-    vim.api.nvim_set_hl(0, "SnippetTabStop", { link = "CursorLine" })
+    vim.api.nvim_set_hl(0, "SnippetTabStop", {})
     vim.api.nvim_set_hl(0, "CmpBorder", { fg = "#81A1C1" })
+    vim.api.nvim_set_hl(0, "PmenuSel", { bg = "#364A82" })
 
     -- Override window settings
     opts.window = {
@@ -40,11 +41,11 @@ return {
     }
 
     opts.matching = {
-      disallow_fuzzy_matching = false, -- Allow "ptr" matching "peter"
-      disallow_partial_matching = false, -- Allow "mail" matching in "middleware"
-      disallow_prefix_unmatching = false, -- Allow matches anywhere, not just word starts
-      disallow_fullfuzzy_matching = false, -- Allow "mkr" matching "market" (any order)
-      disallow_partial_fuzzy_matching = false, -- Allow fuzzy matching within parts of words
+      disallow_fuzzy_matching = false, -- Enable fuzzy matching ("ptr" matches "peter")
+      disallow_partial_matching = false, -- Enable partial matches ("mail" in "middleware")
+      disallow_prefix_unmatching = true, -- Require matches at word starts for better precision
+      disallow_fullfuzzy_matching = true, -- Disable full fuzzy ("mkr" matching "market") to prevent noise
+      disallow_partial_fuzzy_matching = false, -- Allow fuzzy within word parts
     }
 
     -- Keep existing mappings
