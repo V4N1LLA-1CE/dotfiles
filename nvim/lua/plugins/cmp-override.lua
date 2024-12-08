@@ -10,14 +10,24 @@ return {
     local cmp = require("cmp")
 
     -- Define border style
+    -- local border = {
+    --   { "╭", "CmpBorder" },
+    --   { "─", "CmpBorder" },
+    --   { "╮", "CmpBorder" },
+    --   { "│", "CmpBorder" },
+    --   { "╯", "CmpBorder" },
+    --   { "─", "CmpBorder" },
+    --   { "╰", "CmpBorder" },
+    --   { "│", "CmpBorder" },
+    -- }
     local border = {
-      { "╭", "CmpBorder" },
+      { "┌", "CmpBorder" },
       { "─", "CmpBorder" },
-      { "╮", "CmpBorder" },
+      { "┐", "CmpBorder" },
       { "│", "CmpBorder" },
-      { "╯", "CmpBorder" },
+      { "┘", "CmpBorder" },
       { "─", "CmpBorder" },
-      { "╰", "CmpBorder" },
+      { "└", "CmpBorder" },
       { "│", "CmpBorder" },
     }
 
@@ -38,6 +48,11 @@ return {
         winhighlight = "Normal:Normal,NormalFloat:Normal,FloatBorder:CmpBorder",
         winblend = 0,
       },
+      -- hover = {
+      --   border = border,
+      --   winhighlight = "Normal:Normal,NormalFloat:Normal,FloatBorder:CmpBorder,CursorLine:PmenuSel",
+      --   winblend = 0,
+      -- },
     }
 
     opts.matching = {
