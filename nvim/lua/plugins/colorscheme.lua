@@ -103,123 +103,123 @@
 -- }
 
 -- rose-pine
-return {
-  "rose-pine/neovim",
-  name = "rose-pine",
-  priority = 1000,
-  config = function()
-    require("rose-pine").setup({
-      variant = "auto",
-      dark_variant = "main",
-      dim_inactive_windows = false,
-      extend_background_behind_borders = true,
-      enable = {
-        terminal = true,
-        legacy_highlights = true,
-        migrations = true,
-      },
-      styles = {
-        bold = true,
-        italic = true,
-        transparency = true,
-      },
-      groups = {
-        border = "muted",
-        link = "iris",
-        panel = "surface",
-        error = "love",
-        hint = "iris",
-        info = "foam",
-        note = "pine",
-        todo = "rose",
-        warn = "gold",
-        git_add = "foam",
-        git_change = "rose",
-        git_delete = "love",
-        git_dirty = "rose",
-        git_ignore = "muted",
-        git_merge = "iris",
-        git_rename = "pine",
-        git_stage = "iris",
-        git_text = "rose",
-        git_untracked = "subtle",
-        h1 = "iris",
-        h2 = "foam",
-        h3 = "rose",
-        h4 = "gold",
-        h5 = "pine",
-        h6 = "foam",
-      },
-      highlight_groups = {
-
-        -- Cursor highlights
-        Cursor = { fg = "base", bg = "love" },
-        iCursor = { fg = "base", bg = "gold" },
-        vCursor = { fg = "base", bg = "iris" },
-        Cursorline = { bg = "surface" },
-        Visual = { bg = "rose", fg = "base" },
-
-        -- LspReferenceText = { bg = "muted", fg = "base" },
-        -- LspReferenceRead = { bg = "muted", fg = "base" },
-        -- LspReferenceWrite = { bg = "muted", fg = "base" },
-
-        -- Comments (only italic elements)
-        Comment = { fg = "muted", italic = true },
-        ["@comment"] = { fg = "muted", italic = true },
-        -- Keywords and control flow (bold only)
-        Keyword = { fg = "pine", bold = true, italic = false },
-        ["@keyword"] = { fg = "pine", bold = true, italic = false },
-        Conditional = { fg = "pine", bold = true, italic = false },
-        ["@conditional"] = { fg = "pine", bold = true, italic = false },
-        Repeat = { fg = "pine", bold = true, italic = false },
-        ["@repeat"] = { fg = "pine", bold = true, italic = false },
-        -- Functions (bold only)
-        Function = { fg = "foam", bold = true, italic = false },
-        ["@function"] = { fg = "foam", bold = true, italic = false },
-        ["@method"] = { fg = "foam", bold = true, italic = false },
-        -- Types (bold only)
-        Type = { fg = "gold", bold = true, italic = false },
-        ["@type"] = { fg = "gold", bold = true, italic = false },
-        ["@type.builtin"] = { fg = "gold", bold = true, italic = false },
-        -- Variables and parameters (bold only)
-        ["@variable"] = { fg = "text", bold = true, italic = false },
-        ["@parameter"] = { fg = "rose", bold = true, italic = false },
-        -- String and text (bold only)
-        String = { fg = "gold", bold = true, italic = false },
-        ["@string"] = { fg = "gold", bold = true, italic = false },
-        -- Important keywords (bold only)
-        Include = { fg = "pine", bold = true, italic = false },
-        ["@include"] = { fg = "pine", bold = true, italic = false },
-        -- Constants (bold only)
-        Constant = { fg = "gold", bold = true, italic = false },
-        ["@constant"] = { fg = "gold", bold = true, italic = false },
-        ["@constant.builtin"] = { fg = "gold", bold = true, italic = false },
-        -- Operators (bold only)
-        Operator = { fg = "rose", bold = true, italic = false },
-        ["@operator"] = { fg = "rose", bold = true, italic = false },
-        -- Diagnostics (underline)
-        DiagnosticUnderlineError = { sp = "love", undercurl = true },
-        DiagnosticUnderlineWarn = { sp = "gold", undercurl = true },
-        DiagnosticUnderlineInfo = { sp = "foam", undercurl = true },
-        DiagnosticUnderlineHint = { sp = "iris", undercurl = true },
-      },
-      before_highlight = function(group, highlight, palette)
-        if group == "Cursor" then
-          highlight.bold = true
-        end
-        -- Ensure italics are disabled for all groups except comments
-        if group ~= "Comment" and group ~= "@comment" then
-          highlight.italic = false
-        end
-      end,
-    })
-    -- Set the colorscheme
-    vim.cmd("colorscheme rose-pine-main")
-    -- Additional cursor settings for better visibility
-    vim.opt.cursorline = false
-    vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-iCursor,r-cr:hor20,o:hor50"
-  end,
-}
+-- return {
+--   "rose-pine/neovim",
+--   name = "rose-pine",
+--   priority = 1000,
+--   config = function()
+--     require("rose-pine").setup({
+--       variant = "moon",
+--       dark_variant = "main",
+--       dim_inactive_windows = false,
+--       extend_background_behind_borders = true,
+--       enable = {
+--         terminal = true,
+--         legacy_highlights = true,
+--         migrations = true,
+--       },
+--       styles = {
+--         bold = true,
+--         italic = true,
+--         transparency = true,
+--       },
+--       groups = {
+--         border = "muted",
+--         link = "iris",
+--         panel = "surface",
+--         error = "love",
+--         hint = "iris",
+--         info = "foam",
+--         note = "pine",
+--         todo = "rose",
+--         warn = "gold",
+--         git_add = "foam",
+--         git_change = "rose",
+--         git_delete = "love",
+--         git_dirty = "rose",
+--         git_ignore = "muted",
+--         git_merge = "iris",
+--         git_rename = "pine",
+--         git_stage = "iris",
+--         git_text = "rose",
+--         git_untracked = "subtle",
+--         h1 = "iris",
+--         h2 = "foam",
+--         h3 = "rose",
+--         h4 = "gold",
+--         h5 = "pine",
+--         h6 = "foam",
+--       },
+--       highlight_groups = {
+--
+--         -- Cursor highlights
+--         Cursor = { fg = "base", bg = "love" },
+--         iCursor = { fg = "base", bg = "gold" },
+--         vCursor = { fg = "base", bg = "iris" },
+--         Cursorline = { bg = "surface" },
+--         Visual = { bg = "rose", fg = "base" },
+--
+--         -- LspReferenceText = { bg = "muted", fg = "base" },
+--         -- LspReferenceRead = { bg = "muted", fg = "base" },
+--         -- LspReferenceWrite = { bg = "muted", fg = "base" },
+--
+--         -- Comments (only italic elements)
+--         Comment = { fg = "muted", italic = true },
+--         ["@comment"] = { fg = "muted", italic = true },
+--         -- Keywords and control flow (bold only)
+--         Keyword = { fg = "pine", bold = true, italic = false },
+--         ["@keyword"] = { fg = "pine", bold = true, italic = false },
+--         Conditional = { fg = "pine", bold = true, italic = false },
+--         ["@conditional"] = { fg = "pine", bold = true, italic = false },
+--         Repeat = { fg = "pine", bold = true, italic = false },
+--         ["@repeat"] = { fg = "pine", bold = true, italic = false },
+--         -- Functions (bold only)
+--         Function = { fg = "foam", bold = true, italic = false },
+--         ["@function"] = { fg = "foam", bold = true, italic = false },
+--         ["@method"] = { fg = "foam", bold = true, italic = false },
+--         -- Types (bold only)
+--         Type = { fg = "gold", bold = true, italic = false },
+--         ["@type"] = { fg = "gold", bold = true, italic = false },
+--         ["@type.builtin"] = { fg = "gold", bold = true, italic = false },
+--         -- Variables and parameters (bold only)
+--         ["@variable"] = { fg = "text", bold = true, italic = false },
+--         ["@parameter"] = { fg = "rose", bold = true, italic = false },
+--         -- String and text (bold only)
+--         String = { fg = "gold", bold = true, italic = false },
+--         ["@string"] = { fg = "gold", bold = true, italic = false },
+--         -- Important keywords (bold only)
+--         Include = { fg = "pine", bold = true, italic = false },
+--         ["@include"] = { fg = "pine", bold = true, italic = false },
+--         -- Constants (bold only)
+--         Constant = { fg = "gold", bold = true, italic = false },
+--         ["@constant"] = { fg = "gold", bold = true, italic = false },
+--         ["@constant.builtin"] = { fg = "gold", bold = true, italic = false },
+--         -- Operators (bold only)
+--         Operator = { fg = "rose", bold = true, italic = false },
+--         ["@operator"] = { fg = "rose", bold = true, italic = false },
+--         -- Diagnostics (underline)
+--         DiagnosticUnderlineError = { sp = "love", undercurl = true },
+--         DiagnosticUnderlineWarn = { sp = "gold", undercurl = true },
+--         DiagnosticUnderlineInfo = { sp = "foam", undercurl = true },
+--         DiagnosticUnderlineHint = { sp = "iris", undercurl = true },
+--       },
+--       before_highlight = function(group, highlight, palette)
+--         if group == "Cursor" then
+--           highlight.bold = true
+--         end
+--         -- Ensure italics are disabled for all groups except comments
+--         if group ~= "Comment" and group ~= "@comment" then
+--           highlight.italic = false
+--         end
+--       end,
+--     })
+--     -- Set the colorscheme
+--     vim.cmd("colorscheme rose-pine-main")
+--     -- Additional cursor settings for better visibility
+--     vim.opt.cursorline = false
+--     vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-iCursor,r-cr:hor20,o:hor50"
+--   end,
+-- }
 
 -- one dark
 -- return {
@@ -229,7 +229,7 @@ return {
 --     -- lua
 --     require("onedark").setup({
 --       -- main options --
---       style = "dark", -- default theme style. choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+--       style = "warm", -- default theme style. choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
 --       transparent = true, -- show/hide background
 --       term_colors = true, -- change terminal color as per the selected theme style
 --       ending_tildes = false, -- show the end-of-buffer tildes. by default they are hidden
@@ -244,10 +244,10 @@ return {
 --       -- you can configure multiple style with comma separated, for e.g., keywords = 'italic,bold'
 --       code_style = {
 --         comments = "italic",
---         keywords = "none",
+--         keywords = "bold",
 --         functions = "none",
 --         strings = "none",
---         variables = "none",
+--         variables = "bold",
 --       },
 --
 --       -- lualine options --
@@ -257,7 +257,9 @@ return {
 --
 --       -- custom highlights --
 --       colors = {}, -- override default colors
---       highlights = {}, -- override highlight groups
+--       highlights = {
+--         Cursorline = { bg = "NONE" },
+--       }, -- override highlight groups
 --
 --       -- plugins config --
 --       diagnostics = {
@@ -545,3 +547,50 @@ return {
 --     end,
 --   },
 -- }
+
+return {
+  {
+    "shaunsingh/nord.nvim",
+    priority = 1000,
+    config = function()
+      -- Nord theme configuration
+      vim.g.nord_contrast = true
+      vim.g.nord_borders = false
+      vim.g.nord_disable_background = true
+      vim.g.nord_italic = true
+      vim.g.nord_uniform_diff_background = true
+      vim.g.nord_bold = true
+
+      -- Load the colorscheme
+      require("nord").set()
+
+      -- Additional theme customizations
+      local custom_highlights = {
+        -- Customize line numbers
+        LineNr = { fg = "#616E88" },
+
+        Visual = { bg = "#81A1C1", fg = "#000000" },
+
+        -- Fix general transparency issues
+        Normal = { bg = "NONE" },
+        NormalFloat = { bg = "NONE" },
+        FloatBorder = { bg = "NONE" },
+        SignColumn = { bg = "NONE" },
+        EndOfBuffer = { bg = "NONE" },
+        StatusLine = { bg = "NONE" },
+        StatusLineNC = { bg = "NONE" },
+        VertSplit = { bg = "NONE" },
+        Folded = { bg = "NONE" },
+
+        -- Enhanced visibility for matching parentheses
+        MatchParen = { fg = "#88C0D0", bold = true },
+      }
+
+      for group, colors in pairs(custom_highlights) do
+        vim.api.nvim_set_hl(0, group, colors)
+      end
+
+      vim.opt.cursorline = false
+    end,
+  },
+}

@@ -1,6 +1,4 @@
-general.import = [
-  "~/.config/alacritty/themes/themes/embark.toml"
-]
+general.import = ["~/.config/alacritty/themes/themes/embark.toml"]
 # good themes: coolnight, tokyonight, catppuccin, kanagawa, deep_space, nord/nordic, rose-pine, embark
 
 [env]
@@ -27,12 +25,11 @@ family = "JetBrainsMono Nerd Font"
 # family = "FiraCode Nerd Font"
 style = "Regular"
 
-[ font.bold ]
+[font.bold]
 style = "Bold"
 
-[ font.italic ]
+[font.italic]
 style = "Italic"
 
-[ font.bold_italic ]
+[font.bold_italic]
 style = "Bold Italic"
-
