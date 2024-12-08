@@ -39,6 +39,14 @@ return {
       },
     }
 
+    opts.matching = {
+      disallow_fuzzy_matching = false, -- Allow "ptr" matching "peter"
+      disallow_partial_matching = false, -- Allow "mail" matching in "middleware"
+      disallow_prefix_unmatching = false, -- Allow matches anywhere, not just word starts
+      disallow_fullfuzzy_matching = false, -- Allow "mkr" matching "market" (any order)
+      disallow_partial_fuzzy_matching = false, -- Allow fuzzy matching within parts of words
+    }
+
     -- Keep existing mappings
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       ["<Tab>"] = cmp.mapping(function(fallback)
