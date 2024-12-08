@@ -569,12 +569,10 @@ return {
         -- Customize line numbers
         LineNr = { fg = "#616E88" },
 
-        Visual = { bg = "#D33682", fg = "#000000" },
+        Visual = { bg = "#ADD8E6", fg = "#000000" },
 
         -- Fix general transparency issues
         Normal = { bg = "NONE" },
-        NormalFloat = { bg = "NONE" },
-        FloatBorder = { bg = "NONE" },
         SignColumn = { bg = "NONE" },
         EndOfBuffer = { bg = "NONE" },
         StatusLine = { bg = "NONE" },
@@ -599,8 +597,22 @@ return {
         LspReferenceText = { bg = "NONE" },
         LspReferenceRead = { bg = "NONE" },
         LspReferenceWrite = { bg = "NONE" },
+
+        -- LSP suggestion improvements with transparency and border
+        Pmenu = { bg = "NONE", fg = "#D8DEE9" },
+        PmenuSel = { bg = "#3B4252", fg = "#88C0D0" },
+        PmenuSbar = { bg = "NONE" },
+        PmenuThumb = { bg = "#4C566A" },
+        NormalFloat = { bg = "NONE" },
+        FloatBorder = { bg = "NONE", fg = "#81A1C1" },
+        CmpItemAbbr = { fg = "#D8DEE9" },
+        CmpItemAbbrMatch = { fg = "#88C0D0", bold = true },
+        CmpItemAbbrMatchFuzzy = { fg = "#88C0D0", bold = true },
+        CmpItemMenu = { fg = "#81A1C1" },
+        CmpItemKind = { fg = "#81A1C1" },
       }
 
+      -- LSP suggestion improvements
       for group, colors in pairs(custom_highlights) do
         vim.api.nvim_set_hl(0, group, colors)
       end

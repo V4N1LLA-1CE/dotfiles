@@ -9,9 +9,37 @@ return {
     end
     local cmp = require("cmp")
 
-    -- Add this highlighting config
-    vim.api.nvim_set_hl(0, "SnippetTabStop", { link = "CursorLine" }) -- or any other highlight group you prefer
+    -- Define border style
+    local border = {
+      { "╭", "CmpBorder" },
+      { "─", "CmpBorder" },
+      { "╮", "CmpBorder" },
+      { "│", "CmpBorder" },
+      { "╯", "CmpBorder" },
+      { "─", "CmpBorder" },
+      { "╰", "CmpBorder" },
+      { "│", "CmpBorder" },
+    }
 
+    -- Add this highlighting config
+    vim.api.nvim_set_hl(0, "SnippetTabStop", { link = "CursorLine" })
+    vim.api.nvim_set_hl(0, "CmpBorder", { fg = "#81A1C1" })
+
+    -- Override window settings
+    opts.window = {
+      completion = {
+        border = border,
+        winhighlight = "Normal:Normal,NormalFloat:Normal,FloatBorder:CmpBorder,CursorLine:PmenuSel",
+        winblend = 0,
+      },
+      documentation = {
+        border = border,
+        winhighlight = "Normal:Normal,NormalFloat:Normal,FloatBorder:CmpBorder",
+        winblend = 0,
+      },
+    }
+
+    -- Keep existing mappings
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
@@ -38,5 +66,7 @@ return {
         end
       end, { "i", "s" }),
     })
+
+    return opts
   end,
 }
