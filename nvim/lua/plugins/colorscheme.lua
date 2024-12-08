@@ -569,7 +569,7 @@ return {
         -- Customize line numbers
         LineNr = { fg = "#616E88" },
 
-        Visual = { bg = "#81A1C1", fg = "#000000" },
+        Visual = { bg = "#D33682", fg = "#000000" },
 
         -- Fix general transparency issues
         Normal = { bg = "NONE" },
@@ -582,8 +582,23 @@ return {
         VertSplit = { bg = "NONE" },
         Folded = { bg = "NONE" },
 
+        -- Remove selection backgrounds
+        NeoTreeCursorLine = { bg = "NONE", fg = "#88C0D0" },
+        TelescopeSelection = { bg = "NONE", fg = "#88C0D0" },
+        TelescopeSelectionCaret = { bg = "NONE", fg = "#88C0D0" },
+        -- Telescope borders with Nord blue
+        TelescopeBorder = { fg = "#81A1C1" },
+        TelescopePromptBorder = { fg = "#81A1C1" },
+        TelescopeResultsBorder = { fg = "#81A1C1" },
+        TelescopePreviewBorder = { fg = "#81A1C1" },
+
         -- Enhanced visibility for matching parentheses
         MatchParen = { fg = "#88C0D0", bold = true },
+
+        -- LSP Reference highlights
+        LspReferenceText = { bg = "NONE" },
+        LspReferenceRead = { bg = "NONE" },
+        LspReferenceWrite = { bg = "NONE" },
       }
 
       for group, colors in pairs(custom_highlights) do
