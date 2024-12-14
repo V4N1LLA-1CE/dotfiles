@@ -568,7 +568,6 @@ return {
       local custom_highlights = {
         -- Customize line numbers
         LineNr = { fg = "#616E88" },
-
         Visual = { bg = "#ADD8E6", fg = "#000000" },
 
         -- Fix general transparency issues
@@ -598,13 +597,16 @@ return {
         LspReferenceRead = { bg = "NONE" },
         LspReferenceWrite = { bg = "NONE" },
 
+        -- floats
+        NormalFloat = { bg = "NONE", fg = "#81A1C1" },
+        FloatBorder = { bg = "NONE", fg = "#81A1C1" },
+
         -- LSP suggestion improvements with transparency and border
-        Pmenu = { bg = "NONE", fg = "#D8DEE9" },
+        -- Pmenu = { bg = "NONE", fg = "#D8DEE9", blend = 10 },
         PmenuSel = { bg = "#3B4252", fg = "#88C0D0" },
         PmenuSbar = { bg = "NONE" },
         PmenuThumb = { bg = "#4C566A" },
-        NormalFloat = { bg = "NONE" },
-        FloatBorder = { bg = "NONE", fg = "#81A1C1" },
+
         CmpItemAbbr = { fg = "#D8DEE9" },
         CmpItemAbbrMatch = { fg = "#88C0D0", bold = true },
         CmpItemAbbrMatchFuzzy = { fg = "#88C0D0", bold = true },
@@ -616,8 +618,6 @@ return {
       for group, colors in pairs(custom_highlights) do
         vim.api.nvim_set_hl(0, group, colors)
       end
-
-      vim.opt.cursorline = false
     end,
   },
 }
