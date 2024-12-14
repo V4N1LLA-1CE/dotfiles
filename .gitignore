@@ -2,3 +2,4 @@ neofetch/
 
 # ignore submodules
 tmux/plugins/*
+gh/
