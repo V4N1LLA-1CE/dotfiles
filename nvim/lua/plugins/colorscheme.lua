@@ -623,3 +623,31 @@ return {
     end,
   },
 }
+
+-- return {
+--   {
+--     "catppuccin/nvim",
+--     name = "catppuccin",
+--     priority = 1000,
+--     lazy = false,
+--     config = function()
+--       require("catppuccin").setup({
+--         flavour = "mocha", -- Can be: mocha, macchiato, frappe, or latte
+--         transparent_background = true, -- Enable transparency
+--         float_background = false, -- Make floating windows transparent
+--         integrations = {
+--           neotree = true,
+--         },
+--         highlight_overrides = {
+--           all = function(colors)
+--             return {
+--               NeoTreeNormal = { bg = "NONE" },
+--               NeoTreeNormalNC = { bg = "NONE" },
+--             }
+--           end,
+--         },
+--       })
+--       vim.cmd([[colorscheme catppuccin]])
+--     end,
+--   },
+-- }
