@@ -1,5 +1,9 @@
-general.import = ["~/.config/alacritty/themes/themes/embark.toml"]
-# good themes: coolnight, tokyonight, catppuccin, kanagawa, deep_space, nord/nordic, rose-pine, embark
+general.import = [
+  "~/.config/alacritty/themes/themes/github_dark_high_contrast.toml",
+]
+# good themes:
+# coolnight, tokyonight, catppuccin, kanagawa, deep_space, nord/nordic, rose-pine, embark, catpuccin
+# github-dark
 
 [env]
 TERM = "xterm-256color"
@@ -21,8 +25,10 @@ size = 17
 
 [font.normal]
 # family = "MesloLGS Nerd Font Mono"
-family = "JetBrainsMono Nerd Font"
+# family = "JetBrainsMono Nerd Font"
 # family = "FiraCode Nerd Font"
+# family = "Hack Nerd Font"
+family = "CaskaydiaCove Nerd Font"
 style = "Regular"
 
 [font.bold]
