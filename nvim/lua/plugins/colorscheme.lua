@@ -620,6 +620,16 @@ return {
       for group, colors in pairs(custom_highlights) do
         vim.api.nvim_set_hl(0, group, colors)
       end
+
+      vim.cmd([[
+        set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,o:hor50-Cursor/lCursor
+        highlight! Cursor guifg=#2E3440 guibg=#88C0D0 gui=NONE cterm=NONE
+        highlight! link iCursor Cursor
+        highlight! link vCursor Cursor
+        highlight! link lCursor Cursor
+      ]])
+      vim.opt.guicursor =
+        "n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,o:hor50-Cursor/lCursor"
     end,
   },
 }
