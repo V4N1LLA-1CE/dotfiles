@@ -548,116 +548,123 @@
 --   },
 -- }
 
+-- return {
+--   {
+--     "shaunsingh/nord.nvim",
+--     priority = 1000,
+--     config = function()
+--       -- Nord theme configuration
+--       vim.g.nord_contrast = true
+--       vim.g.nord_borders = false
+--       vim.g.nord_disable_background = true
+--       vim.g.nord_italic = true
+--       vim.g.nord_uniform_diff_background = true
+--       vim.g.nord_bold = true
+--
+--       -- Load the colorscheme
+--       require("nord").set()
+--
+--       -- Additional theme customizations
+--       local custom_highlights = {
+--         -- Customize line numbers
+--         LineNr = { fg = "#616E88" },
+--         Visual = { bg = "#ADD8E6", fg = "#000000" },
+--
+--         -- Fix general transparency issues
+--         Normal = { bg = "NONE" },
+--         SignColumn = { bg = "NONE" },
+--         EndOfBuffer = { bg = "NONE" },
+--         StatusLine = { bg = "NONE" },
+--         StatusLineNC = { bg = "NONE" },
+--         VertSplit = { bg = "NONE" },
+--         Folded = { bg = "NONE" },
+--
+--         -- Remove selection backgrounds
+--         NeoTreeCursorLine = { bg = "NONE", fg = "#88C0D0" },
+--         TelescopeSelection = { bg = "NONE", fg = "#88C0D0" },
+--         TelescopeSelectionCaret = { bg = "NONE", fg = "#88C0D0" },
+--         -- Telescope borders with Nord blue
+--         TelescopeBorder = { fg = "#81A1C1" },
+--         TelescopePromptBorder = { fg = "#81A1C1" },
+--         TelescopeResultsBorder = { fg = "#81A1C1" },
+--         TelescopePreviewBorder = { fg = "#81A1C1" },
+--
+--         -- Enhanced visibility for matching parentheses
+--         MatchParen = { fg = "#88C0D0", bold = true },
+--
+--         -- LSP Reference highlights
+--         LspReferenceText = { bg = "NONE" },
+--         LspReferenceRead = { bg = "NONE" },
+--         LspReferenceWrite = { bg = "NONE" },
+--
+--         -- floats
+--         NormalFloat = { bg = "NONE", fg = "#81A1C1" },
+--         FloatBorder = { bg = "NONE", fg = "#81A1C1" },
+--
+--         -- LSP suggestion improvements with transparency and border
+--         -- Pmenu = { bg = "NONE", fg = "#D8DEE9", blend = 10 },
+--         PmenuSel = { bg = "#3B4252", fg = "#88C0D0" },
+--         PmenuSbar = { bg = "NONE" },
+--         PmenuThumb = { bg = "#4C566A" },
+--
+--         CmpItemAbbr = { fg = "#D8DEE9" },
+--         CmpItemAbbrMatch = { fg = "#88C0D0", bold = true },
+--         CmpItemAbbrMatchFuzzy = { fg = "#88C0D0", bold = true },
+--         CmpItemMenu = { fg = "#81A1C1" },
+--         CmpItemKind = { fg = "#81A1C1" },
+--       }
+--
+--       vim.api.nvim_set_hl(0, "snippetTabstop", { bg = "NONE" })
+--
+--       -- LSP suggestion improvements
+--       for group, colors in pairs(custom_highlights) do
+--         vim.api.nvim_set_hl(0, group, colors)
+--       end
+--
+--       vim.cmd([[
+--         set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,o:hor50-Cursor/lCursor
+--         highlight! Cursor guifg=#2E3440 guibg=#98FF98 gui=NONE cterm=NONE
+--         highlight! link iCursor Cursor
+--         highlight! link vCursor Cursor
+--         highlight! link lCursor Cursor
+--       ]])
+--       vim.opt.guicursor =
+--         "n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,o:hor50-Cursor/lCursor"
+--     end,
+--   },
+-- }
+
 return {
   {
-    "shaunsingh/nord.nvim",
+    "catppuccin/nvim",
+    name = "catppuccin",
     priority = 1000,
+    lazy = false,
     config = function()
-      -- Nord theme configuration
-      vim.g.nord_contrast = true
-      vim.g.nord_borders = false
-      vim.g.nord_disable_background = true
-      vim.g.nord_italic = true
-      vim.g.nord_uniform_diff_background = true
-      vim.g.nord_bold = true
-
-      -- Load the colorscheme
-      require("nord").set()
-
-      -- Additional theme customizations
-      local custom_highlights = {
-        -- Customize line numbers
-        LineNr = { fg = "#616E88" },
-        Visual = { bg = "#ADD8E6", fg = "#000000" },
-
-        -- Fix general transparency issues
-        Normal = { bg = "NONE" },
-        SignColumn = { bg = "NONE" },
-        EndOfBuffer = { bg = "NONE" },
-        StatusLine = { bg = "NONE" },
-        StatusLineNC = { bg = "NONE" },
-        VertSplit = { bg = "NONE" },
-        Folded = { bg = "NONE" },
-
-        -- Remove selection backgrounds
-        NeoTreeCursorLine = { bg = "NONE", fg = "#88C0D0" },
-        TelescopeSelection = { bg = "NONE", fg = "#88C0D0" },
-        TelescopeSelectionCaret = { bg = "NONE", fg = "#88C0D0" },
-        -- Telescope borders with Nord blue
-        TelescopeBorder = { fg = "#81A1C1" },
-        TelescopePromptBorder = { fg = "#81A1C1" },
-        TelescopeResultsBorder = { fg = "#81A1C1" },
-        TelescopePreviewBorder = { fg = "#81A1C1" },
-
-        -- Enhanced visibility for matching parentheses
-        MatchParen = { fg = "#88C0D0", bold = true },
-
-        -- LSP Reference highlights
-        LspReferenceText = { bg = "NONE" },
-        LspReferenceRead = { bg = "NONE" },
-        LspReferenceWrite = { bg = "NONE" },
-
-        -- floats
-        NormalFloat = { bg = "NONE", fg = "#81A1C1" },
-        FloatBorder = { bg = "NONE", fg = "#81A1C1" },
-
-        -- LSP suggestion improvements with transparency and border
-        -- Pmenu = { bg = "NONE", fg = "#D8DEE9", blend = 10 },
-        PmenuSel = { bg = "#3B4252", fg = "#88C0D0" },
-        PmenuSbar = { bg = "NONE" },
-        PmenuThumb = { bg = "#4C566A" },
-
-        CmpItemAbbr = { fg = "#D8DEE9" },
-        CmpItemAbbrMatch = { fg = "#88C0D0", bold = true },
-        CmpItemAbbrMatchFuzzy = { fg = "#88C0D0", bold = true },
-        CmpItemMenu = { fg = "#81A1C1" },
-        CmpItemKind = { fg = "#81A1C1" },
-      }
-
-      vim.api.nvim_set_hl(0, "snippetTabstop", { bg = "NONE" })
-
-      -- LSP suggestion improvements
-      for group, colors in pairs(custom_highlights) do
-        vim.api.nvim_set_hl(0, group, colors)
-      end
-
+      require("catppuccin").setup({
+        flavour = "mocha", -- Can be: mocha, macchiato, frappe, or latte
+        transparent_background = true, -- Enable transparency
+        float_background = false, -- Make floating windows transparent
+        integrations = {
+          neotree = true,
+        },
+        highlight_overrides = {
+          all = function(colors)
+            return {
+              NeoTreeNormal = { bg = "NONE" },
+              NeoTreeNormalNC = { bg = "NONE" },
+            }
+          end,
+        },
+      })
+      vim.cmd([[colorscheme catppuccin]])
       vim.cmd([[
         set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,o:hor50-Cursor/lCursor
-        highlight! Cursor guifg=#2E3440 guibg=#88C0D0 gui=NONE cterm=NONE
+        highlight! Cursor guifg=#1E1E2E guibg=#FAB387 gui=NONE cterm=NONE
         highlight! link iCursor Cursor
         highlight! link vCursor Cursor
         highlight! link lCursor Cursor
       ]])
-      vim.opt.guicursor =
-        "n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,o:hor50-Cursor/lCursor"
     end,
   },
 }
-
--- return {
---   {
---     "catppuccin/nvim",
---     name = "catppuccin",
---     priority = 1000,
---     lazy = false,
---     config = function()
---       require("catppuccin").setup({
---         flavour = "mocha", -- Can be: mocha, macchiato, frappe, or latte
---         transparent_background = true, -- Enable transparency
---         float_background = false, -- Make floating windows transparent
---         integrations = {
---           neotree = true,
---         },
---         highlight_overrides = {
---           all = function(colors)
---             return {
---               NeoTreeNormal = { bg = "NONE" },
---               NeoTreeNormalNC = { bg = "NONE" },
---             }
---           end,
---         },
---       })
---       vim.cmd([[colorscheme catppuccin]])
---     end,
---   },
--- }
