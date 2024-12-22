@@ -660,7 +660,7 @@ return {
       vim.cmd([[colorscheme catppuccin]])
       vim.cmd([[
         set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,o:hor50-Cursor/lCursor
-        highlight! Cursor guifg=#1E1E2E guibg=#FAB387 gui=NONE cterm=NONE
+        highlight! Cursor guifg=#1E1E2E guibg=#F5E0DC gui=NONE cterm=NONE
         highlight! link iCursor Cursor
         highlight! link vCursor Cursor
         highlight! link lCursor Cursor
