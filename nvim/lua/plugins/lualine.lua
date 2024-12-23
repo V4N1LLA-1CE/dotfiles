@@ -2,48 +2,48 @@ return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
-    local custom_rosepine = require("lualine.themes.horizon")
+    -- local custom_rosepine = require("lualine.themes.horizon")
 
     -- Rose Pine colors
-    local colors = {
-      base = "#191724",
-      surface = "#1f1d2e",
-      overlay = "#26233a",
-      muted = "#6e6a86",
-      subtle = "#908caa",
-      text = "#e0def4",
-      love = "#eb6f92",
-      gold = "#f6c177",
-      rose = "#ebbcba",
-      pine = "#31748f",
-      foam = "#9ccfd8",
-      iris = "#c4a7e7",
-    }
+    -- local colors = {
+    --   base = "#191724",
+    --   surface = "#1f1d2e",
+    --   overlay = "#26233a",
+    --   muted = "#6e6a86",
+    --   subtle = "#908caa",
+    --   text = "#e0def4",
+    --   love = "#eb6f92",
+    --   gold = "#f6c177",
+    --   rose = "#ebbcba",
+    --   pine = "#31748f",
+    --   foam = "#9ccfd8",
+    --   iris = "#c4a7e7",
+    -- }
 
     -- Setting nils and colors for each mode
-    custom_rosepine.normal.c.bg = nil
-    custom_rosepine.insert.c.bg = nil
-    custom_rosepine.command.c.bg = nil
-    custom_rosepine.visual.c.bg = nil
-    custom_rosepine.normal.c.fg = colors.muted -- Using muted for regular text
-    custom_rosepine.insert.c.fg = colors.muted
-    custom_rosepine.command.c.fg = colors.muted
-    custom_rosepine.visual.c.fg = colors.muted
-
-    custom_rosepine.normal.a.bg = colors.iris
-    custom_rosepine.insert.a.bg = colors.love
-    custom_rosepine.command.a.bg = colors.foam
-    custom_rosepine.visual.a.bg = colors.gold
-
-    custom_rosepine.normal.b.bg = "#191724"
-    custom_rosepine.insert.b.bg = "#191724"
-    custom_rosepine.visual.b.bg = "#191724"
-    custom_rosepine.command.b.bg = "#191724"
-
-    custom_rosepine.normal.b.fg = colors.iris
-    custom_rosepine.insert.b.fg = colors.love
-    custom_rosepine.visual.b.fg = colors.gold
-    custom_rosepine.command.b.fg = colors.foam
+    -- custom_rosepine.normal.c.bg = nil
+    -- custom_rosepine.insert.c.bg = nil
+    -- custom_rosepine.command.c.bg = nil
+    -- custom_rosepine.visual.c.bg = nil
+    -- custom_rosepine.normal.c.fg = colors.muted -- Using muted for regular text
+    -- custom_rosepine.insert.c.fg = colors.muted
+    -- custom_rosepine.command.c.fg = colors.muted
+    -- custom_rosepine.visual.c.fg = colors.muted
+    --
+    -- custom_rosepine.normal.a.bg = colors.iris
+    -- custom_rosepine.insert.a.bg = colors.love
+    -- custom_rosepine.command.a.bg = colors.foam
+    -- custom_rosepine.visual.a.bg = colors.gold
+    --
+    -- custom_rosepine.normal.b.bg = "#191724"
+    -- custom_rosepine.insert.b.bg = "#191724"
+    -- custom_rosepine.visual.b.bg = "#191724"
+    -- custom_rosepine.command.b.bg = "#191724"
+    --
+    -- custom_rosepine.normal.b.fg = colors.iris
+    -- custom_rosepine.insert.b.fg = colors.love
+    -- custom_rosepine.visual.b.fg = colors.gold
+    -- custom_rosepine.command.b.fg = colors.foam
 
     -- local custom_horizon = require("lualine.themes.horizon")
     -- custom_horizon.normal.c.bg = nil
@@ -104,7 +104,7 @@ return {
     require("lualine").setup({
       options = {
         icons_enabled = true,
-        theme = custom_rosepine,
+        theme = "catppuccin",
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
         disabled_filetypes = {
