@@ -7,10 +7,16 @@
 ## What's Inside
 
 ### 🖥 Terminal Setup
-- **[Ghostty](https://ghostty.org/)** - Fast GPU-accelerated terminal emulator
-- **[Alacritty](https://alacritty.org/)** - Alternative terminal configuration
-- **[p10k](https://github.com/romkatv/powerlevel10k)** - Terminal prompt styling
+- **[Ghostty](https://ghostty.org/)**
+- **[Alacritty](https://alacritty.org/)**
+- **[p10k](https://github.com/romkatv/powerlevel10k)**
 
-### ⌨️ Development Environment
-- **[LazyVim](https://www.lazyvim.org/)** - Neovim-based IDE with modern features and lazy-loaded plugins
-- **[tmux](https://github.com/tmux/tmux/wiki)** - Terminal multiplexer for session management and workflow optimization
+### ⌨ Development Environment
+- **[LazyVim](https://www.lazyvim.org/)**
+- **[tmux](https://github.com/tmux/tmux/wiki)**
+
+## Notes
+Only Ghostty configurations will be maintained and updated going forward. Alacritty configurations are provided as an alternative option but will not be updated much.
+
+## License
+Do whatever you want with these configs :)
