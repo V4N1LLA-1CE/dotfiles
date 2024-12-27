@@ -6,7 +6,8 @@ font-family = CaskaydiaCove Nerd Font
 
 # background
 background-blur-radius = 20
-background-opacity = 0.7
+background-opacity = 0.8
 
+# misc
 mouse-hide-while-typing = true
 window-decoration = true
