@@ -6,8 +6,22 @@ font-family = CaskaydiaCove Nerd Font
 
 # background
 background-blur-radius = 20
-background-opacity = 0.8
+background-opacity = 0.9
+
+# window settings
+window-decoration = true
+window-theme = ghostty
+window-padding-balance = true
+window-padding-x = 10
+window-padding-y = 0
+
+# ghostty icon
+macos-icon = official
+# macos-icon-ghost-color =
+# macos-icon-screen-color =
+# macos-icon-frame =
 
 # misc
 mouse-hide-while-typing = true
-window-decoration = true
+bold-is-bright = true
+auto-update = download
