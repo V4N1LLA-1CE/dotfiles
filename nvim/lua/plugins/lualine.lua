@@ -85,22 +85,47 @@ return {
         globalstatus = true,
       },
       sections = {
-        lualine_a = { { "mode", separator = { left = round.left, right = round.right } } },
+        lualine_a = { { "mode", icon = "", separator = { left = round.left, right = round.right } } },
         lualine_b = {
-          "filename",
+          {
+            "filename",
+            icon = "",
+            colored = true,
+          },
           {
             "branch",
-            icon = "\u{f418}",
+            icon = "",
             colored = true,
           },
         },
 
         -- center components
-        lualine_c = {},
-        lualine_x = {},
+        lualine_c = {
+          { "encoding", icon = " " },
+        },
+        lualine_x = {
+          { "diagnostics", sources = { "nvim_lsp" }, sections = { "error", "warn" }, always_visible = true },
+        },
 
-        lualine_y = { "filetype", "progress" },
-        lualine_z = { { "location", separator = { right = round.right, left = round.left } } },
+        lualine_y = {
+          {
+            "filetype",
+          },
+          {
+            "progress",
+            icon = "󰲽",
+          },
+          { "location" },
+        },
+        lualine_z = {
+          {
+            function()
+              return os.date("%H:%M:%S")
+            end,
+            separator = { right = round.right, left = round.left },
+            icon = "󰃰",
+          },
+        },
       },
       inactive_sections = {
         lualine_a = { "filename" },
@@ -111,54 +136,8 @@ return {
         lualine_z = { "location" },
       },
       tabline = {},
-      winbar = {
-        lualine_a = {
-          {
-            function()
-              -- terminal icon
-              return ""
-            end,
-            separator = { left = round.left },
-          },
-        },
-        lualine_b = {
-          {
-            function()
-              return "lazyvim" -- Static string to indicate tmux connection or workspace
-            end,
-            separator = { right = round.right },
-          },
-        },
-        lualine_c = {},
-        lualine_x = {
-          {
-            function()
-              return "󰃰"
-            end,
-            separator = { left = round.left },
-            color = { bg = "#88C0D0", fg = "#2e303e" },
-          },
-        },
-        lualine_y = {
-          {
-            function()
-              return os.date("%H:%M") -- Display current time
-            end,
-            separator = { right = round.right },
-          },
-        },
-        lualine_z = {},
-      },
-      inactive_winbar = {
-        lualine_a = {
-          { "filename", path = 1, symbols = { unnamed = "[No Name]" } },
-        },
-        lualine_b = {},
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {},
-      },
+      winbar = {},
+      inactive_winbar = {},
 
       extensions = {},
     })
