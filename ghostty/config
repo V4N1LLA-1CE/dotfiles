@@ -34,3 +34,4 @@ macos-icon = official
 mouse-hide-while-typing = true
 bold-is-bright = true
 auto-update = download
+macos-option-as-alt=true
