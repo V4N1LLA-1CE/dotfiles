@@ -1,6 +1,15 @@
-# theme and fonts
+# themes
+#
 # theme = catppuccin-mocha
-theme = github dark
+# theme = rose-pine
+# theme = Github Dark
+# theme = Kanagawa Wave
+theme = MaterialOcean
+# theme = Horizon
+# theme = Ayu Mirage
+# theme = iceberg-dark
+
+# font
 font-size = 17
 font-family = CaskaydiaCove Nerd Font
 
@@ -12,7 +21,7 @@ background-opacity = 0.9
 window-decoration = true
 window-theme = ghostty
 window-padding-balance = true
-window-padding-x = 10
+window-padding-x = 15
 window-padding-y = 5
 
 # ghostty icon
