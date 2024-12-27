@@ -13,7 +13,7 @@ window-decoration = true
 window-theme = ghostty
 window-padding-balance = true
 window-padding-x = 10
-window-padding-y = 0
+window-padding-y = 5
 
 # ghostty icon
 macos-icon = official
