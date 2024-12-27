@@ -1,5 +1,15 @@
-# Developer Environment Files 👾
+# 👾 Dotfiles
 
-<img width="1798" alt="demo-1" src="https://github.com/user-attachments/assets/d00f09ab-821f-453c-9180-5bc61048d606">
-<img width="1798" alt="demo-2" src="https://github.com/user-attachments/assets/1cbf3a1e-9ee8-494a-ac72-73b0bc5fafed">
-<img width="1798" alt="demo-3" src="https://github.com/user-attachments/assets/756a11e1-47ba-45fc-861d-826c662732a0">
+![Development Environment 1](https://github.com/user-attachments/assets/64255ae8-d2a7-40e8-b0ef-911e648f000d)
+![Development Environment 2](https://github.com/user-attachments/assets/9d3d0f6b-609e-4722-a2e9-3258d73ff7e6)
+![Development Environment 3](https://github.com/user-attachments/assets/2db60fa7-8735-4082-9e02-56a1e79798ba)
+
+## What's Inside
+
+### 🖥 Terminal Setup
+- **[Ghostty](https://ghostty.org/)** - Fast GPU-accelerated terminal emulator
+- **[Alacritty](https://alacritty.org/)** - Alternative terminal configuration maintained for flexibility
+
+### ⌨️ Development Environment
+- **[LazyVim](https://www.lazyvim.org/)** - Neovim-based IDE with modern features and lazy-loaded plugins
+- **[tmux](https://github.com/tmux/tmux/wiki)** - Terminal multiplexer for session management and workflow optimization
