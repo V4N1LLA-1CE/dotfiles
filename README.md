@@ -8,7 +8,8 @@
 
 ### 🖥 Terminal Setup
 - **[Ghostty](https://ghostty.org/)** - Fast GPU-accelerated terminal emulator
-- **[Alacritty](https://alacritty.org/)** - Alternative terminal configuration maintained for flexibility
+- **[Alacritty](https://alacritty.org/)** - Alternative terminal configuration
+- **[p10k](https://github.com/romkatv/powerlevel10k)** - Terminal prompt styling
 
 ### ⌨️ Development Environment
 - **[LazyVim](https://www.lazyvim.org/)** - Neovim-based IDE with modern features and lazy-loaded plugins
