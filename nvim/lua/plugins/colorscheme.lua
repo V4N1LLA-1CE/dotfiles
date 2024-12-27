@@ -634,37 +634,171 @@
 --   },
 -- }
 
+-- return {
+--   {
+--     "catppuccin/nvim",
+--     name = "catppuccin",
+--     priority = 1000,
+--     lazy = false,
+--     config = function()
+--       require("catppuccin").setup({
+--         flavour = "mocha", -- Can be: mocha, macchiato, frappe, or latte
+--         transparent_background = true, -- Enable transparency
+--         float_background = false, -- Make floating windows transparent
+--         integrations = {
+--           neotree = true,
+--         },
+--         highlight_overrides = {
+--           all = function(colors)
+--             return {
+--               NeoTreeNormal = { bg = "NONE" },
+--               NeoTreeNormalNC = { bg = "NONE" },
+--             }
+--           end,
+--         },
+--       })
+--       vim.cmd([[colorscheme catppuccin]])
+--       vim.cmd([[
+--         set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,o:hor50-Cursor/lCursor
+--         highlight! Cursor guifg=#1E1E2E guibg=#F5E0DC gui=NONE cterm=NONE
+--         highlight! link iCursor Cursor
+--         highlight! link vCursor Cursor
+--         highlight! link lCursor Cursor
+--       ]])
+--     end,
+--   },
+-- }
+
+-- horizon
 return {
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    priority = 1000,
-    lazy = false,
-    config = function()
-      require("catppuccin").setup({
-        flavour = "mocha", -- Can be: mocha, macchiato, frappe, or latte
-        transparent_background = true, -- Enable transparency
-        float_background = false, -- Make floating windows transparent
-        integrations = {
-          neotree = true,
-        },
-        highlight_overrides = {
-          all = function(colors)
-            return {
-              NeoTreeNormal = { bg = "NONE" },
-              NeoTreeNormalNC = { bg = "NONE" },
-            }
-          end,
-        },
-      })
-      vim.cmd([[colorscheme catppuccin]])
-      vim.cmd([[
-        set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,o:hor50-Cursor/lCursor
-        highlight! Cursor guifg=#1E1E2E guibg=#F5E0DC gui=NONE cterm=NONE
-        highlight! link iCursor Cursor
-        highlight! link vCursor Cursor
-        highlight! link lCursor Cursor
-      ]])
-    end,
-  },
+  "lunarvim/horizon.nvim",
+  priority = 1000,
+  config = function()
+    -- Set the colorscheme to horizon
+    vim.cmd([[colorscheme horizon]])
+
+    -- Function to set transparency
+    local set_transparency = function()
+      local transparent_groups = {
+        "Normal",
+        "NormalNC",
+        "NormalFloat",
+        "EndOfBuffer",
+        "SignColumn",
+        "StatusLine",
+        "StatusLineNC",
+        "VertSplit",
+        "WinSeparator",
+
+        -- NeoTree
+        "NeoTreeNormal",
+        "NeoTreeNormalNC",
+        "NeoTreeRootName",
+        "NeoTreeDirectoryName",
+
+        -- Telescope
+        "TelescopeNormal",
+        "TelescopeBorder",
+        "TelescopePromptNormal",
+        "TelescopePromptBorder",
+        "TelescopeResultsNormal",
+        "TelescopeResultsBorder",
+
+        -- FZF (Pmenu-related)
+        -- "Pmenu",
+        -- "PmenuSel",
+        -- "PmenuSbar",
+        -- "PmenuThumb",
+
+        -- Mason
+        "MasonNormal",
+        "MasonHeader",
+        "MasonHeading",
+
+        -- WhichKey
+        "WhichKey",
+        "WhichKeySeperator",
+        "WhichKeyGroup",
+        "WhichKeyDesc",
+        "WhichKeyValue",
+      }
+
+      for _, group in ipairs(transparent_groups) do
+        vim.cmd(string.format("hi %s guibg=NONE ctermbg=NONE", group))
+      end
+    end
+
+    -- Updated Visual highlight to use a darker grey that matches Horizon theme
+    vim.cmd([[hi Visual guibg=#313244 guifg=NONE ctermbg=NONE ctermfg=NONE]])
+
+    vim.cmd([[hi CursorLine guibg=#2e303e]])
+
+    -- yank
+    vim.api.nvim_create_autocmd("TextYankPost", {
+      pattern = "*",
+      callback = function()
+        vim.highlight.on_yank({ higroup = "IncSearch", timeout = 200 })
+      end,
+    })
+
+    vim.opt.pumblend = 0
+
+    vim.cmd([[set termguicolors]]) -- Enable true color support in Vim
+    vim.cmd([[hi IncSearch guibg=#e95678 guifg=#000000]])
+
+    vim.opt.completeopt = "menuone,noinsert,noselect"
+
+    vim.g.completion_enable_auto_popup = 1
+    vim.g.completion_enable_auto_hover = 1
+    vim.g.completion_enable_snippet = "UltiSnips"
+    vim.g.completion_matching_strategy_list = { "exact", "substring", "fuzzy" }
+    vim.g.completion_trigger_on_delete = 1
+
+    -- Set floating window border
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+      border = "single",
+    })
+
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+      border = "single",
+    })
+    vim.cmd([[hi FloatBorder guifg=#fab795]])
+
+    vim.cmd([[hi Pmenu guibg=#0F111A guifg=#e0e0e0]])
+    vim.cmd([[hi PmenuBorder guifg=#2e303e]])
+    vim.cmd([[hi PmenuSel guibg=#e95678 guifg=#fab795 gui=bold]])
+    vim.cmd([[hi PmenuSelBorder guifg=#fab795]])
+    vim.cmd([[hi PmenuSbar guibg=#2e303e guifg=#2e303e]])
+    vim.cmd([[hi PmenuThumb guibg=#6c6f93]])
+
+    vim.cmd([[hi CursorLine guibg=#2e303e]])
+
+    vim.opt.pumblend = 0
+    vim.opt.winblend = 0
+
+    vim.opt.guicursor = "n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20,o:hor50"
+    vim.cmd([[hi Cursor guifg=#0F111A guibg=#fab795]]) -- Peach color from horizon
+    vim.cmd([[hi iCursor guifg=#0F111A guibg=#fab795]])
+    vim.cmd([[hi vCursor guifg=#0F111A guibg=#fab795]])
+    vim.cmd([[hi lCursor guifg=#0F111A guibg=#fab795]])
+
+    vim.cmd([[hi MsgArea guibg=NONE ctermbg=NONE]])
+    vim.cmd([[hi CommandMode guibg=NONE ctermbg=NONE]])
+    vim.cmd([[hi MsgSeparator guibg=NONE ctermbg=NONE]])
+    vim.cmd([[hi NormalNC guibg=NONE ctermbg=NONE]])
+    vim.cmd([[hi MessageWindow guibg=NONE ctermbg=NONE]])
+    vim.cmd([[hi Search guibg=NONE guifg=#fab795 gui=underline blend=0]])
+    vim.cmd([[hi CmdLine guibg=NONE ctermbg=NONE]])
+
+    -- Apply transparency
+    set_transparency()
+
+    -- Ensure transparency is applied after plugin setups
+    vim.api.nvim_create_autocmd("ColorScheme", {
+      pattern = "*",
+      callback = function()
+        set_transparency()
+      end,
+    })
+  end,
 }
