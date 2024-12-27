@@ -746,6 +746,17 @@ return {
     vim.cmd([[set termguicolors]]) -- Enable true color support in Vim
     vim.cmd([[hi IncSearch guibg=#e95678 guifg=#000000]])
 
+    -- Add selective bold and italic styles
+    vim.cmd([[hi Comment gui=italic cterm=italic]]) -- Comments italicized
+    vim.cmd([[hi Keyword gui=italic cterm=italic]]) -- Keywords italicized
+    vim.cmd([[hi Function gui=bold cterm=bold]]) -- Functions bold
+    vim.cmd([[hi Type gui=bold cterm=bold]]) -- Types bold
+    vim.cmd([[hi String gui=italic cterm=italic]]) -- Strings italicized
+    vim.cmd([[hi Conditional gui=italic cterm=italic]]) -- Conditional italicized
+    vim.cmd([[hi Title gui=bold cterm=bold]]) -- Titles bold
+    vim.cmd([[hi Include gui=italic cterm=italic]]) -- Include/import italicized
+    vim.cmd([[hi Define gui=italic cterm=italic]]) -- Preprocessor macros italicized
+
     vim.opt.completeopt = "menuone,noinsert,noselect"
 
     vim.g.completion_enable_auto_popup = 1
