@@ -711,9 +711,9 @@ return {
         -- "PmenuThumb",
 
         -- Mason
-        "MasonNormal",
-        "MasonHeader",
-        "MasonHeading",
+        -- "MasonNormal",
+        -- "MasonHeader",
+        -- "MasonHeading",
 
         -- WhichKey
         "WhichKey",
@@ -730,7 +730,6 @@ return {
 
     -- Updated Visual highlight to use a darker grey that matches Horizon theme
     vim.cmd([[hi Visual guibg=#313244 guifg=NONE ctermbg=NONE ctermfg=NONE]])
-
     vim.cmd([[hi CursorLine guibg=#2e303e]])
 
     -- yank
@@ -743,7 +742,9 @@ return {
 
     vim.opt.pumblend = 0
 
-    vim.cmd([[set termguicolors]]) -- Enable true color support in Vim
+    -- Enable true color support in Vim
+    vim.cmd([[set termguicolors]])
+    -- yank color
     vim.cmd([[hi IncSearch guibg=#e95678 guifg=#000000]])
 
     -- Add selective bold and italic styles
@@ -757,6 +758,35 @@ return {
     vim.cmd([[hi Include gui=italic cterm=italic]]) -- Include/import italicized
     vim.cmd([[hi Define gui=italic cterm=italic]]) -- Preprocessor macros italicized
 
+    -- Fix Lazy.nvim selection highlights
+    vim.cmd([[hi LazyH1 guifg=#e95678 gui=bold]])
+    vim.cmd([[hi LazyButton guibg=#2e303e]])
+    vim.cmd([[hi LazyButtonActive guibg=#e95678 guifg=#1C1E26 gui=bold]])
+    vim.cmd([[hi LazySpecial guifg=#fab795]])
+
+    -- Enhance NeoTree colors
+    vim.cmd([[hi NeoTreeFileName guifg=#fab795]]) -- Horizon yellow for filenames
+    vim.cmd([[hi NeoTreeDirectoryName guifg=#e95678 gui=bold]]) -- Horizon red for directory names
+    vim.cmd([[hi NeoTreeRootName guifg=#e95678 gui=bold]]) -- Horizon red for root directory
+    vim.cmd([[hi NeoTreeGitModified guifg=#fab795]])
+    vim.cmd([[hi NeoTreeGitAdded guifg=#29D398]])
+    vim.cmd([[hi NeoTreeGitDeleted guifg=#e95678]])
+
+    -- Fix NeoTree icons and prompts with transparent background
+    vim.cmd([[hi NeoTreeDirectoryIcon guifg=#e95678]])
+    vim.cmd([[hi NeoTreeFileIcon guifg=#fab795]])
+    vim.cmd([[hi NeoTreeTitleBar guibg=#e95678 gui=bold]]) -- Specific to NeoTree title bar
+
+    -- Floating window and prompt highlights with transparent background
+    vim.cmd([[hi NeoTreeFloatBorder guifg=#e95678 guibg=NONE]])
+    vim.cmd([[hi NeoTreeFloatTitle guifg=#e95678 guibg=NONE gui=bold]])
+    vim.cmd([[hi NeoTreeFloatNormal guifg=#fab795 guibg=NONE]])
+    vim.cmd([[hi NeoTreePrompt guifg=#fab795 guibg=NONE]])
+    vim.cmd([[hi NeoTreePromptNormal guifg=#fab795 guibg=NONE]])
+    vim.cmd([[hi FloatTitle guifg=#e95678 guibg=NONE gui=bold]])
+    vim.cmd([[hi FloatBorder guifg=#e95678 guibg=NONE]])
+    vim.cmd([[hi FocusedSymbol guifg=#fab795 guibg=NONE]])
+
     vim.opt.completeopt = "menuone,noinsert,noselect"
 
     vim.g.completion_enable_auto_popup = 1
@@ -769,12 +799,13 @@ return {
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
       border = "single",
     })
-
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
       border = "single",
     })
+    -- yellow float borders
     vim.cmd([[hi FloatBorder guifg=#fab795]])
 
+    -- autocomplete menu
     vim.cmd([[hi Pmenu guibg=#0F111A guifg=#e0e0e0]])
     vim.cmd([[hi PmenuBorder guifg=#2e303e]])
     vim.cmd([[hi PmenuSel guibg=#e95678 guifg=#fab795 gui=bold]])
