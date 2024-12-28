@@ -2,20 +2,20 @@
 #
 # theme = catppuccin-mocha
 # theme = rose-pine
-# theme = Github Dark
+theme = Github Dark
 # theme = Kanagawa Wave
-theme = MaterialOcean
+# theme = MaterialOcean
 # theme = Horizon
 # theme = Ayu Mirage
 # theme = iceberg-dark
 
 # font
-font-size = 17
+font-size = 18
 font-family = CaskaydiaCove Nerd Font
 
 # background
 background-blur-radius = 60
-background-opacity = 0.9
+background-opacity = 0.8
 
 # window settings
 window-decoration = true
