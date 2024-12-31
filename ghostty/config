@@ -16,7 +16,7 @@ font-family = CaskaydiaCove Nerd Font
 
 # background
 background-blur-radius = 20
-background-opacity = 0.8
+background-opacity = 0.9
 
 # window settings
 window-decoration = true
