@@ -103,123 +103,123 @@
 -- }
 
 -- rose-pine
--- return {
---   "rose-pine/neovim",
---   name = "rose-pine",
---   priority = 1000,
---   config = function()
---     require("rose-pine").setup({
---       variant = "moon",
---       dark_variant = "main",
---       dim_inactive_windows = false,
---       extend_background_behind_borders = true,
---       enable = {
---         terminal = true,
---         legacy_highlights = true,
---         migrations = true,
---       },
---       styles = {
---         bold = true,
---         italic = true,
---         transparency = true,
---       },
---       groups = {
---         border = "muted",
---         link = "iris",
---         panel = "surface",
---         error = "love",
---         hint = "iris",
---         info = "foam",
---         note = "pine",
---         todo = "rose",
---         warn = "gold",
---         git_add = "foam",
---         git_change = "rose",
---         git_delete = "love",
---         git_dirty = "rose",
---         git_ignore = "muted",
---         git_merge = "iris",
---         git_rename = "pine",
---         git_stage = "iris",
---         git_text = "rose",
---         git_untracked = "subtle",
---         h1 = "iris",
---         h2 = "foam",
---         h3 = "rose",
---         h4 = "gold",
---         h5 = "pine",
---         h6 = "foam",
---       },
---       highlight_groups = {
---
---         -- Cursor highlights
---         Cursor = { fg = "base", bg = "love" },
---         iCursor = { fg = "base", bg = "gold" },
---         vCursor = { fg = "base", bg = "iris" },
---         Cursorline = { bg = "surface" },
---         Visual = { bg = "rose", fg = "base" },
---
---         -- LspReferenceText = { bg = "muted", fg = "base" },
---         -- LspReferenceRead = { bg = "muted", fg = "base" },
---         -- LspReferenceWrite = { bg = "muted", fg = "base" },
---
---         -- Comments (only italic elements)
---         Comment = { fg = "muted", italic = true },
---         ["@comment"] = { fg = "muted", italic = true },
---         -- Keywords and control flow (bold only)
---         Keyword = { fg = "pine", bold = true, italic = false },
---         ["@keyword"] = { fg = "pine", bold = true, italic = false },
---         Conditional = { fg = "pine", bold = true, italic = false },
---         ["@conditional"] = { fg = "pine", bold = true, italic = false },
---         Repeat = { fg = "pine", bold = true, italic = false },
---         ["@repeat"] = { fg = "pine", bold = true, italic = false },
---         -- Functions (bold only)
---         Function = { fg = "foam", bold = true, italic = false },
---         ["@function"] = { fg = "foam", bold = true, italic = false },
---         ["@method"] = { fg = "foam", bold = true, italic = false },
---         -- Types (bold only)
---         Type = { fg = "gold", bold = true, italic = false },
---         ["@type"] = { fg = "gold", bold = true, italic = false },
---         ["@type.builtin"] = { fg = "gold", bold = true, italic = false },
---         -- Variables and parameters (bold only)
---         ["@variable"] = { fg = "text", bold = true, italic = false },
---         ["@parameter"] = { fg = "rose", bold = true, italic = false },
---         -- String and text (bold only)
---         String = { fg = "gold", bold = true, italic = false },
---         ["@string"] = { fg = "gold", bold = true, italic = false },
---         -- Important keywords (bold only)
---         Include = { fg = "pine", bold = true, italic = false },
---         ["@include"] = { fg = "pine", bold = true, italic = false },
---         -- Constants (bold only)
---         Constant = { fg = "gold", bold = true, italic = false },
---         ["@constant"] = { fg = "gold", bold = true, italic = false },
---         ["@constant.builtin"] = { fg = "gold", bold = true, italic = false },
---         -- Operators (bold only)
---         Operator = { fg = "rose", bold = true, italic = false },
---         ["@operator"] = { fg = "rose", bold = true, italic = false },
---         -- Diagnostics (underline)
---         DiagnosticUnderlineError = { sp = "love", undercurl = true },
---         DiagnosticUnderlineWarn = { sp = "gold", undercurl = true },
---         DiagnosticUnderlineInfo = { sp = "foam", undercurl = true },
---         DiagnosticUnderlineHint = { sp = "iris", undercurl = true },
---       },
---       before_highlight = function(group, highlight, palette)
---         if group == "Cursor" then
---           highlight.bold = true
---         end
---         -- Ensure italics are disabled for all groups except comments
---         if group ~= "Comment" and group ~= "@comment" then
---           highlight.italic = false
---         end
---       end,
---     })
---     -- Set the colorscheme
---     vim.cmd("colorscheme rose-pine-main")
---     -- Additional cursor settings for better visibility
---     vim.opt.cursorline = false
---     vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-iCursor,r-cr:hor20,o:hor50"
---   end,
--- }
+return {
+  "rose-pine/neovim",
+  name = "rose-pine",
+  priority = 1000,
+  config = function()
+    require("rose-pine").setup({
+      variant = "rose-pine-main", -- moon, dawn & main
+      dark_variant = "main",
+      dim_inactive_windows = false,
+      extend_background_behind_borders = true,
+      enable = {
+        terminal = true,
+        legacy_highlights = true,
+        migrations = true,
+      },
+      styles = {
+        bold = true,
+        italic = true,
+        transparency = true,
+      },
+      groups = {
+        border = "muted",
+        link = "iris",
+        panel = "surface",
+        error = "love",
+        hint = "iris",
+        info = "foam",
+        note = "pine",
+        todo = "rose",
+        warn = "gold",
+        git_add = "foam",
+        git_change = "rose",
+        git_delete = "love",
+        git_dirty = "rose",
+        git_ignore = "muted",
+        git_merge = "iris",
+        git_rename = "pine",
+        git_stage = "iris",
+        git_text = "rose",
+        git_untracked = "subtle",
+        h1 = "iris",
+        h2 = "foam",
+        h3 = "rose",
+        h4 = "gold",
+        h5 = "pine",
+        h6 = "foam",
+      },
+      highlight_groups = {
+
+        -- Cursor highlights
+        Cursor = { fg = "base", bg = "love" },
+        iCursor = { fg = "base", bg = "gold" },
+        vCursor = { fg = "base", bg = "iris" },
+        Cursorline = { bg = "surface" },
+        Visual = { bg = "rose", fg = "base" },
+
+        -- LspReferenceText = { bg = "muted", fg = "base" },
+        -- LspReferenceRead = { bg = "muted", fg = "base" },
+        -- LspReferenceWrite = { bg = "muted", fg = "base" },
+
+        -- Comments (only italic elements)
+        Comment = { fg = "muted", italic = true },
+        ["@comment"] = { fg = "muted", italic = true },
+        -- Keywords and control flow (bold only)
+        Keyword = { fg = "pine", bold = true, italic = false },
+        ["@keyword"] = { fg = "pine", bold = true, italic = false },
+        Conditional = { fg = "pine", bold = true, italic = false },
+        ["@conditional"] = { fg = "pine", bold = true, italic = false },
+        Repeat = { fg = "pine", bold = true, italic = false },
+        ["@repeat"] = { fg = "pine", bold = true, italic = false },
+        -- Functions (bold only)
+        Function = { fg = "foam", bold = true, italic = false },
+        ["@function"] = { fg = "foam", bold = true, italic = false },
+        ["@method"] = { fg = "foam", bold = true, italic = false },
+        -- Types (bold only)
+        Type = { fg = "gold", bold = true, italic = false },
+        ["@type"] = { fg = "gold", bold = true, italic = false },
+        ["@type.builtin"] = { fg = "gold", bold = true, italic = false },
+        -- Variables and parameters (bold only)
+        ["@variable"] = { fg = "text", bold = true, italic = false },
+        ["@parameter"] = { fg = "rose", bold = true, italic = false },
+        -- String and text (bold only)
+        String = { fg = "gold", bold = true, italic = false },
+        ["@string"] = { fg = "gold", bold = true, italic = false },
+        -- Important keywords (bold only)
+        Include = { fg = "pine", bold = true, italic = false },
+        ["@include"] = { fg = "pine", bold = true, italic = false },
+        -- Constants (bold only)
+        Constant = { fg = "gold", bold = true, italic = false },
+        ["@constant"] = { fg = "gold", bold = true, italic = false },
+        ["@constant.builtin"] = { fg = "gold", bold = true, italic = false },
+        -- Operators (bold only)
+        Operator = { fg = "rose", bold = true, italic = false },
+        ["@operator"] = { fg = "rose", bold = true, italic = false },
+        -- Diagnostics (underline)
+        DiagnosticUnderlineError = { sp = "love", undercurl = true },
+        DiagnosticUnderlineWarn = { sp = "gold", undercurl = true },
+        DiagnosticUnderlineInfo = { sp = "foam", undercurl = true },
+        DiagnosticUnderlineHint = { sp = "iris", undercurl = true },
+      },
+      before_highlight = function(group, highlight, palette)
+        if group == "Cursor" then
+          highlight.bold = true
+        end
+        -- Ensure italics are disabled for all groups except comments
+        if group ~= "Comment" and group ~= "@comment" then
+          highlight.italic = false
+        end
+      end,
+    })
+    -- Set the colorscheme
+    vim.cmd("colorscheme rose-pine-main")
+    -- Additional cursor settings for better visibility
+    vim.opt.cursorline = false
+    vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-iCursor,r-cr:hor20,o:hor50"
+  end,
+}
 
 -- one dark
 -- return {
@@ -670,177 +670,177 @@
 -- }
 
 -- horizon
-return {
-  "lunarvim/horizon.nvim",
-  priority = 1000,
-  config = function()
-    -- Set the colorscheme to horizon
-    vim.cmd([[colorscheme horizon]])
-
-    -- Function to set transparency
-    local set_transparency = function()
-      local transparent_groups = {
-        "Normal",
-        "NormalNC",
-        "NormalFloat",
-        "EndOfBuffer",
-        "SignColumn",
-        "StatusLine",
-        "StatusLineNC",
-        "VertSplit",
-        "WinSeparator",
-
-        -- NeoTree
-        "NeoTreeNormal",
-        "NeoTreeNormalNC",
-        "NeoTreeRootName",
-        "NeoTreeDirectoryName",
-
-        -- Telescope
-        "TelescopeNormal",
-        "TelescopeBorder",
-        "TelescopePromptNormal",
-        "TelescopePromptBorder",
-        "TelescopeResultsNormal",
-        "TelescopeResultsBorder",
-
-        -- FZF (Pmenu-related)
-        -- "Pmenu",
-        -- "PmenuSel",
-        -- "PmenuSbar",
-        -- "PmenuThumb",
-
-        -- Mason
-        -- "MasonNormal",
-        -- "MasonHeader",
-        -- "MasonHeading",
-
-        -- WhichKey
-        "WhichKey",
-        "WhichKeySeperator",
-        "WhichKeyGroup",
-        "WhichKeyDesc",
-        "WhichKeyValue",
-      }
-
-      for _, group in ipairs(transparent_groups) do
-        vim.cmd(string.format("hi %s guibg=NONE ctermbg=NONE", group))
-      end
-    end
-
-    -- Updated Visual highlight to use a darker grey that matches Horizon theme
-    vim.cmd([[hi Visual guibg=#313244 guifg=NONE ctermbg=NONE ctermfg=NONE]])
-    vim.cmd([[hi CursorLine guibg=#2e303e]])
-
-    -- yank
-    vim.api.nvim_create_autocmd("TextYankPost", {
-      pattern = "*",
-      callback = function()
-        vim.highlight.on_yank({ higroup = "IncSearch", timeout = 200 })
-      end,
-    })
-
-    vim.opt.pumblend = 0
-
-    -- Enable true color support in Vim
-    vim.cmd([[set termguicolors]])
-    -- yank color
-    vim.cmd([[hi IncSearch guibg=#e95678 guifg=#000000]])
-
-    -- Add selective bold and italic styles
-    vim.cmd([[hi Comment gui=italic cterm=italic]]) -- Comments italicized
-    vim.cmd([[hi Keyword gui=italic cterm=italic]]) -- Keywords italicized
-    vim.cmd([[hi Function gui=bold cterm=bold]]) -- Functions bold
-    vim.cmd([[hi Type gui=bold cterm=bold]]) -- Types bold
-    vim.cmd([[hi String gui=italic cterm=italic]]) -- Strings italicized
-    vim.cmd([[hi Conditional gui=italic cterm=italic]]) -- Conditional italicized
-    vim.cmd([[hi Title gui=bold cterm=bold]]) -- Titles bold
-    vim.cmd([[hi Include gui=italic cterm=italic]]) -- Include/import italicized
-    vim.cmd([[hi Define gui=italic cterm=italic]]) -- Preprocessor macros italicized
-
-    -- Fix Lazy.nvim selection highlights
-    vim.cmd([[hi LazyH1 guifg=#e95678 gui=bold]])
-    vim.cmd([[hi LazyButton guibg=#2e303e]])
-    vim.cmd([[hi LazyButtonActive guibg=#e95678 guifg=#1C1E26 gui=bold]])
-    vim.cmd([[hi LazySpecial guifg=#fab795]])
-
-    -- Enhance NeoTree colors
-    vim.cmd([[hi NeoTreeFileName guifg=#fab795]]) -- Horizon yellow for filenames
-    vim.cmd([[hi NeoTreeDirectoryName guifg=#e95678 gui=bold]]) -- Horizon red for directory names
-    vim.cmd([[hi NeoTreeRootName guifg=#e95678 gui=bold]]) -- Horizon red for root directory
-    vim.cmd([[hi NeoTreeGitModified guifg=#fab795]])
-    vim.cmd([[hi NeoTreeGitAdded guifg=#29D398]])
-    vim.cmd([[hi NeoTreeGitDeleted guifg=#e95678]])
-
-    -- Fix NeoTree icons and prompts with transparent background
-    vim.cmd([[hi NeoTreeDirectoryIcon guifg=#e95678]])
-    vim.cmd([[hi NeoTreeFileIcon guifg=#fab795]])
-    vim.cmd([[hi NeoTreeTitleBar guibg=#e95678 gui=bold]]) -- Specific to NeoTree title bar
-
-    -- Floating window and prompt highlights with transparent background
-    vim.cmd([[hi NeoTreeFloatBorder guifg=#e95678 guibg=NONE]])
-    vim.cmd([[hi NeoTreeFloatTitle guifg=#e95678 guibg=NONE gui=bold]])
-    vim.cmd([[hi NeoTreeFloatNormal guifg=#fab795 guibg=NONE]])
-    vim.cmd([[hi NeoTreePrompt guifg=#fab795 guibg=NONE]])
-    vim.cmd([[hi NeoTreePromptNormal guifg=#fab795 guibg=NONE]])
-    vim.cmd([[hi FloatTitle guifg=#e95678 guibg=NONE gui=bold]])
-    vim.cmd([[hi FloatBorder guifg=#e95678 guibg=NONE]])
-    vim.cmd([[hi FocusedSymbol guifg=#fab795 guibg=NONE]])
-
-    vim.opt.completeopt = "menuone,noinsert,noselect"
-
-    vim.g.completion_enable_auto_popup = 1
-    vim.g.completion_enable_auto_hover = 1
-    vim.g.completion_enable_snippet = "UltiSnips"
-    vim.g.completion_matching_strategy_list = { "exact", "substring", "fuzzy" }
-    vim.g.completion_trigger_on_delete = 1
-
-    -- Set floating window border
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-      border = "single",
-    })
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-      border = "single",
-    })
-    -- yellow float borders
-    vim.cmd([[hi FloatBorder guifg=#fab795]])
-
-    -- autocomplete menu
-    vim.cmd([[hi Pmenu guibg=#0F111A guifg=#e0e0e0]])
-    vim.cmd([[hi PmenuBorder guifg=#2e303e]])
-    vim.cmd([[hi PmenuSel guibg=#e95678 guifg=#fab795 gui=bold]])
-    vim.cmd([[hi PmenuSelBorder guifg=#fab795]])
-    vim.cmd([[hi PmenuSbar guibg=#2e303e guifg=#2e303e]])
-    vim.cmd([[hi PmenuThumb guibg=#6c6f93]])
-
-    vim.cmd([[hi CursorLine guibg=#2e303e]])
-
-    vim.opt.pumblend = 0
-    vim.opt.winblend = 0
-
-    vim.opt.guicursor = "n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20,o:hor50"
-    vim.cmd([[hi Cursor guifg=#0F111A guibg=#fab795]]) -- Peach color from horizon
-    vim.cmd([[hi iCursor guifg=#0F111A guibg=#fab795]])
-    vim.cmd([[hi vCursor guifg=#0F111A guibg=#fab795]])
-    vim.cmd([[hi lCursor guifg=#0F111A guibg=#fab795]])
-
-    vim.cmd([[hi MsgArea guibg=NONE ctermbg=NONE]])
-    vim.cmd([[hi CommandMode guibg=NONE ctermbg=NONE]])
-    vim.cmd([[hi MsgSeparator guibg=NONE ctermbg=NONE]])
-    vim.cmd([[hi NormalNC guibg=NONE ctermbg=NONE]])
-    vim.cmd([[hi MessageWindow guibg=NONE ctermbg=NONE]])
-    vim.cmd([[hi Search guibg=NONE guifg=#fab795 gui=underline blend=0]])
-    vim.cmd([[hi CmdLine guibg=NONE ctermbg=NONE]])
-
-    -- Apply transparency
-    set_transparency()
-
-    -- Ensure transparency is applied after plugin setups
-    vim.api.nvim_create_autocmd("ColorScheme", {
-      pattern = "*",
-      callback = function()
-        set_transparency()
-      end,
-    })
-  end,
-}
+-- return {
+--   "lunarvim/horizon.nvim",
+--   priority = 1000,
+--   config = function()
+--     -- Set the colorscheme to horizon
+--     vim.cmd([[colorscheme horizon]])
+--
+--     -- Function to set transparency
+--     local set_transparency = function()
+--       local transparent_groups = {
+--         "Normal",
+--         "NormalNC",
+--         "NormalFloat",
+--         "EndOfBuffer",
+--         "SignColumn",
+--         "StatusLine",
+--         "StatusLineNC",
+--         "VertSplit",
+--         "WinSeparator",
+--
+--         -- NeoTree
+--         "NeoTreeNormal",
+--         "NeoTreeNormalNC",
+--         "NeoTreeRootName",
+--         "NeoTreeDirectoryName",
+--
+--         -- Telescope
+--         "TelescopeNormal",
+--         "TelescopeBorder",
+--         "TelescopePromptNormal",
+--         "TelescopePromptBorder",
+--         "TelescopeResultsNormal",
+--         "TelescopeResultsBorder",
+--
+--         -- FZF (Pmenu-related)
+--         -- "Pmenu",
+--         -- "PmenuSel",
+--         -- "PmenuSbar",
+--         -- "PmenuThumb",
+--
+--         -- Mason
+--         -- "MasonNormal",
+--         -- "MasonHeader",
+--         -- "MasonHeading",
+--
+--         -- WhichKey
+--         "WhichKey",
+--         "WhichKeySeperator",
+--         "WhichKeyGroup",
+--         "WhichKeyDesc",
+--         "WhichKeyValue",
+--       }
+--
+--       for _, group in ipairs(transparent_groups) do
+--         vim.cmd(string.format("hi %s guibg=NONE ctermbg=NONE", group))
+--       end
+--     end
+--
+--     -- Updated Visual highlight to use a darker grey that matches Horizon theme
+--     vim.cmd([[hi Visual guibg=#313244 guifg=NONE ctermbg=NONE ctermfg=NONE]])
+--     vim.cmd([[hi CursorLine guibg=#2e303e]])
+--
+--     -- yank
+--     vim.api.nvim_create_autocmd("TextYankPost", {
+--       pattern = "*",
+--       callback = function()
+--         vim.highlight.on_yank({ higroup = "IncSearch", timeout = 200 })
+--       end,
+--     })
+--
+--     vim.opt.pumblend = 0
+--
+--     -- Enable true color support in Vim
+--     vim.cmd([[set termguicolors]])
+--     -- yank color
+--     vim.cmd([[hi IncSearch guibg=#e95678 guifg=#000000]])
+--
+--     -- Add selective bold and italic styles
+--     vim.cmd([[hi Comment gui=italic cterm=italic]]) -- Comments italicized
+--     vim.cmd([[hi Keyword gui=italic cterm=italic]]) -- Keywords italicized
+--     vim.cmd([[hi Function gui=bold cterm=bold]]) -- Functions bold
+--     vim.cmd([[hi Type gui=bold cterm=bold]]) -- Types bold
+--     vim.cmd([[hi String gui=italic cterm=italic]]) -- Strings italicized
+--     vim.cmd([[hi Conditional gui=italic cterm=italic]]) -- Conditional italicized
+--     vim.cmd([[hi Title gui=bold cterm=bold]]) -- Titles bold
+--     vim.cmd([[hi Include gui=italic cterm=italic]]) -- Include/import italicized
+--     vim.cmd([[hi Define gui=italic cterm=italic]]) -- Preprocessor macros italicized
+--
+--     -- Fix Lazy.nvim selection highlights
+--     vim.cmd([[hi LazyH1 guifg=#e95678 gui=bold]])
+--     vim.cmd([[hi LazyButton guibg=#2e303e]])
+--     vim.cmd([[hi LazyButtonActive guibg=#e95678 guifg=#1C1E26 gui=bold]])
+--     vim.cmd([[hi LazySpecial guifg=#fab795]])
+--
+--     -- Enhance NeoTree colors
+--     vim.cmd([[hi NeoTreeFileName guifg=#fab795]]) -- Horizon yellow for filenames
+--     vim.cmd([[hi NeoTreeDirectoryName guifg=#e95678 gui=bold]]) -- Horizon red for directory names
+--     vim.cmd([[hi NeoTreeRootName guifg=#e95678 gui=bold]]) -- Horizon red for root directory
+--     vim.cmd([[hi NeoTreeGitModified guifg=#fab795]])
+--     vim.cmd([[hi NeoTreeGitAdded guifg=#29D398]])
+--     vim.cmd([[hi NeoTreeGitDeleted guifg=#e95678]])
+--
+--     -- Fix NeoTree icons and prompts with transparent background
+--     vim.cmd([[hi NeoTreeDirectoryIcon guifg=#e95678]])
+--     vim.cmd([[hi NeoTreeFileIcon guifg=#fab795]])
+--     vim.cmd([[hi NeoTreeTitleBar guibg=#e95678 gui=bold]]) -- Specific to NeoTree title bar
+--
+--     -- Floating window and prompt highlights with transparent background
+--     vim.cmd([[hi NeoTreeFloatBorder guifg=#e95678 guibg=NONE]])
+--     vim.cmd([[hi NeoTreeFloatTitle guifg=#e95678 guibg=NONE gui=bold]])
+--     vim.cmd([[hi NeoTreeFloatNormal guifg=#fab795 guibg=NONE]])
+--     vim.cmd([[hi NeoTreePrompt guifg=#fab795 guibg=NONE]])
+--     vim.cmd([[hi NeoTreePromptNormal guifg=#fab795 guibg=NONE]])
+--     vim.cmd([[hi FloatTitle guifg=#e95678 guibg=NONE gui=bold]])
+--     vim.cmd([[hi FloatBorder guifg=#e95678 guibg=NONE]])
+--     vim.cmd([[hi FocusedSymbol guifg=#fab795 guibg=NONE]])
+--
+--     vim.opt.completeopt = "menuone,noinsert,noselect"
+--
+--     vim.g.completion_enable_auto_popup = 1
+--     vim.g.completion_enable_auto_hover = 1
+--     vim.g.completion_enable_snippet = "UltiSnips"
+--     vim.g.completion_matching_strategy_list = { "exact", "substring", "fuzzy" }
+--     vim.g.completion_trigger_on_delete = 1
+--
+--     -- Set floating window border
+--     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+--       border = "single",
+--     })
+--     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+--       border = "single",
+--     })
+--     -- yellow float borders
+--     vim.cmd([[hi FloatBorder guifg=#fab795]])
+--
+--     -- autocomplete menu
+--     vim.cmd([[hi Pmenu guibg=#0F111A guifg=#e0e0e0]])
+--     vim.cmd([[hi PmenuBorder guifg=#2e303e]])
+--     vim.cmd([[hi PmenuSel guibg=#e95678 guifg=#fab795 gui=bold]])
+--     vim.cmd([[hi PmenuSelBorder guifg=#fab795]])
+--     vim.cmd([[hi PmenuSbar guibg=#2e303e guifg=#2e303e]])
+--     vim.cmd([[hi PmenuThumb guibg=#6c6f93]])
+--
+--     vim.cmd([[hi CursorLine guibg=#2e303e]])
+--
+--     vim.opt.pumblend = 0
+--     vim.opt.winblend = 0
+--
+--     vim.opt.guicursor = "n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20,o:hor50"
+--     vim.cmd([[hi Cursor guifg=#0F111A guibg=#fab795]]) -- Peach color from horizon
+--     vim.cmd([[hi iCursor guifg=#0F111A guibg=#fab795]])
+--     vim.cmd([[hi vCursor guifg=#0F111A guibg=#fab795]])
+--     vim.cmd([[hi lCursor guifg=#0F111A guibg=#fab795]])
+--
+--     vim.cmd([[hi MsgArea guibg=NONE ctermbg=NONE]])
+--     vim.cmd([[hi CommandMode guibg=NONE ctermbg=NONE]])
+--     vim.cmd([[hi MsgSeparator guibg=NONE ctermbg=NONE]])
+--     vim.cmd([[hi NormalNC guibg=NONE ctermbg=NONE]])
+--     vim.cmd([[hi MessageWindow guibg=NONE ctermbg=NONE]])
+--     vim.cmd([[hi Search guibg=NONE guifg=#fab795 gui=underline blend=0]])
+--     vim.cmd([[hi CmdLine guibg=NONE ctermbg=NONE]])
+--
+--     -- Apply transparency
+--     set_transparency()
+--
+--     -- Ensure transparency is applied after plugin setups
+--     vim.api.nvim_create_autocmd("ColorScheme", {
+--       pattern = "*",
+--       callback = function()
+--         set_transparency()
+--       end,
+--     })
+--   end,
+-- }

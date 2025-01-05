@@ -1,10 +1,10 @@
 # themes
 #
 # theme = catppuccin-mocha
-# theme = rose-pine
+theme = rose-pine
 # theme = Github Dark
 # theme = Kanagawa Wave
-theme = MaterialOcean
+# theme = MaterialOcean
 # theme = Horizon
 # theme = Ayu Mirage
 # theme = iceberg-dark
