@@ -106,33 +106,39 @@
 return {
   "rose-pine/neovim",
   name = "rose-pine",
-  priority = 1000,
   config = function()
+    vim.cmd("colorscheme rose-pine")
     require("rose-pine").setup({
-      variant = "rose-pine-main", -- moon, dawn & main
-      dark_variant = "main",
+      variant = "main", -- auto, main, moon, or dawn
+      dark_variant = "main", -- main, moon, or dawn
       dim_inactive_windows = false,
       extend_background_behind_borders = true,
+      disable_background = true,
+
       enable = {
         terminal = true,
-        legacy_highlights = true,
-        migrations = true,
+        legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+        migrations = true, -- Handle deprecated options automatically
       },
+
       styles = {
         bold = true,
         italic = true,
         transparency = true,
       },
+
       groups = {
         border = "muted",
         link = "iris",
         panel = "surface",
+
         error = "love",
         hint = "iris",
         info = "foam",
         note = "pine",
         todo = "rose",
         warn = "gold",
+
         git_add = "foam",
         git_change = "rose",
         git_delete = "love",
@@ -143,6 +149,7 @@ return {
         git_stage = "iris",
         git_text = "rose",
         git_untracked = "subtle",
+
         h1 = "iris",
         h2 = "foam",
         h3 = "rose",
@@ -150,74 +157,37 @@ return {
         h5 = "pine",
         h6 = "foam",
       },
-      highlight_groups = {
 
-        -- Cursor highlights
-        Cursor = { fg = "base", bg = "love" },
-        iCursor = { fg = "base", bg = "gold" },
-        vCursor = { fg = "base", bg = "iris" },
-        Cursorline = { bg = "surface" },
-        Visual = { bg = "rose", fg = "base" },
-
-        -- LspReferenceText = { bg = "muted", fg = "base" },
-        -- LspReferenceRead = { bg = "muted", fg = "base" },
-        -- LspReferenceWrite = { bg = "muted", fg = "base" },
-
-        -- Comments (only italic elements)
-        Comment = { fg = "muted", italic = true },
-        ["@comment"] = { fg = "muted", italic = true },
-        -- Keywords and control flow (bold only)
-        Keyword = { fg = "pine", bold = true, italic = false },
-        ["@keyword"] = { fg = "pine", bold = true, italic = false },
-        Conditional = { fg = "pine", bold = true, italic = false },
-        ["@conditional"] = { fg = "pine", bold = true, italic = false },
-        Repeat = { fg = "pine", bold = true, italic = false },
-        ["@repeat"] = { fg = "pine", bold = true, italic = false },
-        -- Functions (bold only)
-        Function = { fg = "foam", bold = true, italic = false },
-        ["@function"] = { fg = "foam", bold = true, italic = false },
-        ["@method"] = { fg = "foam", bold = true, italic = false },
-        -- Types (bold only)
-        Type = { fg = "gold", bold = true, italic = false },
-        ["@type"] = { fg = "gold", bold = true, italic = false },
-        ["@type.builtin"] = { fg = "gold", bold = true, italic = false },
-        -- Variables and parameters (bold only)
-        ["@variable"] = { fg = "text", bold = true, italic = false },
-        ["@parameter"] = { fg = "rose", bold = true, italic = false },
-        -- String and text (bold only)
-        String = { fg = "gold", bold = true, italic = false },
-        ["@string"] = { fg = "gold", bold = true, italic = false },
-        -- Important keywords (bold only)
-        Include = { fg = "pine", bold = true, italic = false },
-        ["@include"] = { fg = "pine", bold = true, italic = false },
-        -- Constants (bold only)
-        Constant = { fg = "gold", bold = true, italic = false },
-        ["@constant"] = { fg = "gold", bold = true, italic = false },
-        ["@constant.builtin"] = { fg = "gold", bold = true, italic = false },
-        -- Operators (bold only)
-        Operator = { fg = "rose", bold = true, italic = false },
-        ["@operator"] = { fg = "rose", bold = true, italic = false },
-        -- Diagnostics (underline)
-        DiagnosticUnderlineError = { sp = "love", undercurl = true },
-        DiagnosticUnderlineWarn = { sp = "gold", undercurl = true },
-        DiagnosticUnderlineInfo = { sp = "foam", undercurl = true },
-        DiagnosticUnderlineHint = { sp = "iris", undercurl = true },
+      palette = {
+        -- Override the builtin palette per variant
+        -- moon = {
+        --     base = '#18191a',
+        --     overlay = '#363738',
+        -- },
       },
+
+      highlight_groups = {
+        -- Comment = { fg = "foam" },
+        -- VertSplit = { fg = "muted", bg = "muted" },
+      },
+
       before_highlight = function(group, highlight, palette)
-        if group == "Cursor" then
-          highlight.bold = true
-        end
-        -- Ensure italics are disabled for all groups except comments
-        if group ~= "Comment" and group ~= "@comment" then
-          highlight.italic = false
-        end
+        -- Disable all undercurls
+        -- if highlight.undercurl then
+        --     highlight.undercurl = false
+        -- end
+        --
+        -- Change palette colour
+        -- if highlight.fg == palette.pine then
+        --     highlight.fg = palette.foam
+        -- end
       end,
     })
-    -- Set the colorscheme
-    vim.cmd("colorscheme rose-pine-main")
-    -- Additional cursor settings for better visibility
-    vim.opt.cursorline = false
-    vim.opt.guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-iCursor,r-cr:hor20,o:hor50"
+
+    vim.cmd("colorscheme rose-pine")
+    -- vim.cmd("colorscheme rose-pine-main")
+    -- vim.cmd("colorscheme rose-pine-moon")
+    -- vim.cmd("colorscheme rose-pine-dawn")
   end,
 }
 
