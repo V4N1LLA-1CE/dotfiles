@@ -32,7 +32,7 @@ return {
     -- custom theme with transparent middle section
     -- themes:
     -- horizon, everforest, dracula, modus-vivendi, catppuccin, rose-pine
-    local custom = require("lualine.themes.rose-pine") -- !!!change lualine theme here!!!
+    local custom = require("lualine.themes.horizon") -- !!!change lualine theme here!!!
     custom.normal.c.bg = "none"
     custom.insert.c.bg = "none"
     custom.visual.c.bg = "none"
