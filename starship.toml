@@ -29,7 +29,7 @@ success_symbol = "[➜](bold green)"
 error_symbol = "[✗](bold red)"
 
 [git_status]
-format = '([\[$all_status\]]($style) [$ahead_behind](bold red) )'
+format = "([\\[$all_status$ahead_behind\\]]($style) )"
 style = 'bold red'
 conflicted = '='
 ahead = '⇡${count}'
