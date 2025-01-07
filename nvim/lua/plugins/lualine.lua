@@ -31,39 +31,14 @@ return {
 
     -- custom theme with transparent middle section
     -- themes:
-    -- horizon, everforest, dracula, modus-vivendi, catppuccin, rose-pine
-    local custom = require("lualine.themes.horizon") -- !!!change lualine theme here!!!
+    -- horizon, everforest, dracula, modus-vivendi, catppuccin, rose-pine, morta
+    local custom = require("lualine.themes.morta") -- !!!change lualine theme here!!!
     custom.normal.c.bg = "none"
     custom.insert.c.bg = "none"
     custom.visual.c.bg = "none"
     custom.replace.c.bg = "none"
     custom.command.c.bg = "none"
     custom.inactive.c.bg = "none"
-
-    -- local custom_nord = {
-    --   normal = {
-    --     a = { fg = "#2E3440", bg = "#88C0D0" },
-    --     b = { fg = "#D8DEE9", bg = "#4C566A" },
-    --     c = { fg = "#D8DEE9", bg = "NONE" },
-    --   },
-    --   inactive = {
-    --     a = { fg = "#D8DEE9", bg = "#3B4252" },
-    --     b = { fg = "#D8DEE9", bg = "#3B4252" },
-    --     c = { fg = "#D8DEE9", bg = "NONE" },
-    --   },
-    -- }
-    --
-    -- -- Then copy the base normal mode for other modes
-    -- custom_nord.insert = vim.deepcopy(custom_nord.normal)
-    -- custom_nord.visual = vim.deepcopy(custom_nord.normal)
-    -- custom_nord.replace = vim.deepcopy(custom_nord.normal)
-    -- custom_nord.command = vim.deepcopy(custom_nord.normal)
-    --
-    -- -- Finally override the colors for each mode's section a
-    -- custom_nord.insert.a = { fg = "#2E3440", bg = "#A3BE8C" }
-    -- custom_nord.visual.a = { fg = "#2E3440", bg = "#B48EAD" }
-    -- custom_nord.replace.a = { fg = "#2E3440", bg = "#BF616A" }
-    -- custom_nord.command.a = { fg = "#2E3440", bg = "#EBCB8B" }
 
     require("lualine").setup({
       options = {
