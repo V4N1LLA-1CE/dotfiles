@@ -20,7 +20,7 @@ disabled = false
 use_12hr = true
 
 [os]
-format = "[via]() [$symbol MacOS]($style)"
+format = "[via]() [$symbol\\(MacOS\\)]($style)"
 style = "bold blue"
 disabled = false
 
