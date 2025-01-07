@@ -10,7 +10,7 @@ $line_break\
 $time\
 $character"""
 
-add_newline = false
+add_newline = true
 
 [time]
 format = '[](bold blue) [at]() [$time]($style) '
