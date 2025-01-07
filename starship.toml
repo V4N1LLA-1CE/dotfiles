@@ -17,7 +17,7 @@ format = '[](bold blue) [at]() [$time]($style) '
 style = "bold yellow"
 utc_time_offset = "local"
 disabled = false
-use_12hr = true
+use_12hr = false
 
 [os]
 format = "[via]() [$symbol\\(MacOS\\)]($style)"
