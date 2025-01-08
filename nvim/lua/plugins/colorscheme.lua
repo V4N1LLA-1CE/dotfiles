@@ -148,6 +148,17 @@ return {
     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
     -- Optional: Make sidebar transparent too
     vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
+
+    -- Make error bg transparent
+    local function make_transparent_bg(group_name)
+      local current_hl = vim.api.nvim_get_hl(0, { name = group_name })
+      vim.api.nvim_set_hl(0, group_name, { fg = current_hl.fg, bg = "NONE" })
+    end
+
+    make_transparent_bg("DiagnosticVirtualTextError")
+    make_transparent_bg("DiagnosticVirtualTextWarn")
+    make_transparent_bg("DiagnosticVirtualTextInfo")
+    make_transparent_bg("DiagnosticVirtualTextHint")
   end,
 }
 
