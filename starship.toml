@@ -29,19 +29,19 @@ success_symbol = "[➜](bold green)"
 error_symbol = "[✗](bold red)"
 
 [git_status]
-format = "([\\[$all_status$ahead_behind\\]]($style) )"
-style = 'bold red'
-conflicted = '='
-ahead = '⇡${count}'
-behind = '⇣${count}'
-diverged = '⇕⇡${ahead_count}⇣${behind_count}'
-up_to_date = '✓'
-untracked = '?'
-stashed = '$'
-modified = '!'
-staged = '+'
-renamed = '»'
-deleted = '✘'
+# format = "([\\[$all_status$ahead_behind\\]]($style) )"
+# style = 'bold red'
+# conflicted = '='
+# ahead = '⇡${count}'
+# behind = '⇣${count}'
+# diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+# up_to_date = '✓'
+# untracked = '?'
+# stashed = '$'
+# modified = '!'
+# staged = '+'
+# renamed = '»'
+# deleted = '✘'
 
 ### end of configs ###
 
