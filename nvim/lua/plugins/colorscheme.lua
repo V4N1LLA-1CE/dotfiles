@@ -135,31 +135,131 @@
 -- }
 
 -- morta
+-- return {
+--   "philosofonusus/morta.nvim",
+--   name = "morta",
+--   priority = 1000,
+--   opts = {},
+--   config = function()
+--     vim.cmd.colorscheme("morta")
+--
+--     -- Make background transparent
+--     vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+--     vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+--     -- Optional: Make sidebar transparent too
+--     vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
+--
+--     -- Make error bg transparent
+--     local function make_transparent_bg(group_name)
+--       local current_hl = vim.api.nvim_get_hl(0, { name = group_name })
+--       vim.api.nvim_set_hl(0, group_name, { fg = current_hl.fg, bg = "NONE" })
+--     end
+--
+--     make_transparent_bg("DiagnosticVirtualTextError")
+--     make_transparent_bg("DiagnosticVirtualTextWarn")
+--     make_transparent_bg("DiagnosticVirtualTextInfo")
+--     make_transparent_bg("DiagnosticVirtualTextHint")
+--   end,
+-- }
+
+-- xcode theme
 return {
-  "philosofonusus/morta.nvim",
-  name = "morta",
-  priority = 1000,
-  opts = {},
-  config = function()
-    vim.cmd.colorscheme("morta")
-
-    -- Make background transparent
-    vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
-    -- Optional: Make sidebar transparent too
-    vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
-
-    -- Make error bg transparent
-    local function make_transparent_bg(group_name)
-      local current_hl = vim.api.nvim_get_hl(0, { name = group_name })
-      vim.api.nvim_set_hl(0, group_name, { fg = current_hl.fg, bg = "NONE" })
-    end
-
-    make_transparent_bg("DiagnosticVirtualTextError")
-    make_transparent_bg("DiagnosticVirtualTextWarn")
-    make_transparent_bg("DiagnosticVirtualTextInfo")
-    make_transparent_bg("DiagnosticVirtualTextHint")
-  end,
+  {
+    "arzg/vim-colors-xcode",
+    priority = 1000,
+    config = function()
+      -- Set the colorscheme
+      vim.cmd("colorscheme xcodedark")
+      -- Enable terminal GUI colors
+      vim.opt.termguicolors = true
+      -- Function to make highlights transparent
+      local function make_transparent(group)
+        vim.api.nvim_set_hl(0, group, { bg = "NONE", ctermbg = "NONE" })
+      end
+      -- Basic editor elements
+      local transparent_groups = {
+        "Normal",
+        "NormalFloat",
+        "NormalNC", -- Non-current windows
+        "SignColumn",
+        "EndOfBuffer",
+        "CursorLine",
+        "ColorColumn",
+        "VertSplit",
+        "StatusLine",
+        "StatusLineNC",
+        "LineNr",
+        "CursorLineNr",
+        "Folded",
+        "FoldColumn",
+      }
+      -- Plugin-specific elements
+      local plugin_groups = {
+        -- FZF
+        "FzfLuaNormal",
+        "FzfLuaBorder",
+        "FzfLuaPreviewNormal",
+        "FzfLuaPreviewBorder",
+        -- Treesitter
+        -- "TreesitterContext",
+        -- "TreesitterContextLineNumber",
+        -- Neo-tree
+        -- "NeoTreeNormal",
+        -- "NeoTreeNormalNC",
+        -- "NeoTreeFloatBorder",
+        -- "NeoTreeFloatTitle",
+        -- Which-key
+        "WhichKeyFloat",
+        "WhichKeyBorder",
+        -- Telescope
+        -- "TelescopeNormal",
+        -- "TelescopeBorder",
+        -- "TelescopePrompt",
+        -- "TelescopeResults",
+        -- "TelescopePreview",
+        -- "TelescopeTitle",
+        -- LSP
+        "LspFloatWinNormal",
+        "LspFloatWinBorder",
+        "DiagnosticFloat",
+        -- Completion menu
+        -- "Pmenu",
+        -- "PmenuSel",
+        -- "PmenuSbar",
+        -- "PmenuThumb",
+        -- Floating windows
+        "FloatBorder",
+        "FloatTitle",
+        -- Notify
+        "NotifyBackground",
+        -- Bufferline
+        "BufferLineTabClose",
+        "BufferlineBufferSelected",
+        "BufferLineFill",
+        "BufferLineBackground",
+        "BufferLineSeparator",
+        "BufferLineIndicatorSelected",
+      }
+      -- Apply transparency to all groups
+      for _, group in ipairs(transparent_groups) do
+        make_transparent(group)
+      end
+      for _, group in ipairs(plugin_groups) do
+        make_transparent(group)
+      end
+      -- Set floating window and popup menu transparency
+      vim.opt.winblend = 0 -- Set to 0 for full transparency
+      vim.opt.pumblend = 0 -- Set to 0 for full transparency
+      -- Optional: Adjust specific syntax highlighting
+      vim.api.nvim_set_hl(0, "Comment", { fg = "#7F8C98", italic = true })
+      vim.api.nvim_set_hl(0, "Function", { bold = true })
+      -- Enhanced completion menu styling with brighter colors
+      vim.api.nvim_set_hl(0, "Pmenu", {
+        bg = "#1F1F24", -- Slightly lighter background
+        fg = "#F0F0F0", -- Brighter text
+      })
+    end,
+  },
 }
 
 -- dracula
