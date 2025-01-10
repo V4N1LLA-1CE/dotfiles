@@ -21,7 +21,7 @@ use_12hr = false
 
 [os]
 format = "[via]() [$symbol\\(MacOS\\)]($style)"
-style = "bold blue"
+style = "blue"
 disabled = false
 
 [character]
@@ -77,7 +77,7 @@ symbol = " "
 
 [git_branch]
 symbol = " "
-style = "bright-blue"
+style = "bold bright-blue"
 
 [git_commit]
 tag_symbol = '  '
