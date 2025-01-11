@@ -247,16 +247,52 @@ return {
       for _, group in ipairs(plugin_groups) do
         make_transparent(group)
       end
+      -- Cursor styling
+      vim.api.nvim_set_hl(0, "Cursor", {
+        bg = "#FFB3CC", -- Xcode pink cursor
+        fg = "NONE", -- Don't change text color
+      })
+      -- Set cursor options
+      vim.opt.guicursor = "n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-iCursor,r-cr:hor20,o:hor50"
+      -- Configure yank highlight
+      vim.api.nvim_set_hl(0, "IncSearch", {
+        bg = "#FFB3CC",
+        fg = "#000000", -- Black text for better contrast
+      })
+      -- Configure matching bracket highlight
+      vim.api.nvim_set_hl(0, "MatchParen", {
+        fg = "#FFB3CC", -- Xcode pink
+        bg = "#FF1493", -- Slightly darker pink background
+        bold = true, -- Bold text
+        nocombine = true, -- Ensure effects are applied
+      })
       -- Set floating window and popup menu transparency
       vim.opt.winblend = 0 -- Set to 0 for full transparency
       vim.opt.pumblend = 0 -- Set to 0 for full transparency
       -- Optional: Adjust specific syntax highlighting
       vim.api.nvim_set_hl(0, "Comment", { fg = "#7F8C98", italic = true })
       vim.api.nvim_set_hl(0, "Function", { bold = true })
-      -- Enhanced completion menu styling with brighter colors
+      -- Completion menu styling for Neovim
+      -- Main completion menu background
       vim.api.nvim_set_hl(0, "Pmenu", {
-        bg = "#1F1F24", -- Slightly lighter background
-        fg = "#F0F0F0", -- Brighter text
+        bg = "#191724", -- Base background
+        fg = "#e0def4", -- Text color
+        bold = false,
+        bg_indexed = true,
+      })
+      -- Selected item in completion menu
+      vim.api.nvim_set_hl(0, "PmenuSel", {
+        bg = "#2a2837", -- Overlay background
+        fg = "#ebbcba", -- Rose color for selected text
+        bold = true,
+      })
+      -- Scrollbar
+      vim.api.nvim_set_hl(0, "PmenuSbar", {
+        bg = "#26233a", -- Subtle highlight background
+      })
+      -- Scrollbar thumb
+      vim.api.nvim_set_hl(0, "PmenuThumb", {
+        bg = "#6e6a86", -- Muted color for scrollbar
       })
     end,
   },
