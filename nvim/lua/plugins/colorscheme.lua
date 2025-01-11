@@ -262,7 +262,7 @@ return {
       -- Configure matching bracket highlight
       vim.api.nvim_set_hl(0, "MatchParen", {
         fg = "#FFB3CC", -- Xcode pink
-        bg = "#FF1493", -- Slightly darker pink background
+        bg = "NONE", -- Slightly darker pink background
         bold = true, -- Bold text
         nocombine = true, -- Ensure effects are applied
       })
