@@ -14,6 +14,7 @@ theme = rose-pine
 # font
 font-size = 17
 font-family = CaskaydiaCove Nerd Font
+# font-family = JetBrains Mono
 
 # background
 background-blur-radius = 20
