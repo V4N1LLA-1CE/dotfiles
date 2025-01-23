@@ -39,7 +39,7 @@ diverged = '⇕⇡${ahead_count}⇣${behind_count}'
 
 # icon symbol formatting
 [aws]
-symbol = "  "
+symbol = " "
 
 [buf]
 symbol = " "
