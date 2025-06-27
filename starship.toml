@@ -29,7 +29,7 @@ success_symbol = "[➜](bold green)"
 error_symbol = "[✗](bold red)"
 
 [git_status]
-format = '([\[$all_status\]](bold red) )([\[$ahead_behind\]](bold red) )'
+format = '([\[$modified$staged$untracked$renamed$deleted\]](bold red) )([\[$ahead_behind\]](bold red) )'
 ahead = '⇡${count}'
 behind = '⇣${count}'
 diverged = '⇕⇡${ahead_count}⇣${behind_count}'

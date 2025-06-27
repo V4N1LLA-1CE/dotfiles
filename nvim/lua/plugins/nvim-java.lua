@@ -1,6 +1,7 @@
 return {
   "nvim-java/nvim-java",
   config = false,
+  enabled = false,
   dependencies = {
     {
       "neovim/nvim-lspconfig",
