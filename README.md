@@ -7,15 +7,18 @@
 ## What's Inside
 
 ### 🖥 Terminal Setup
+
 - **[Ghostty](https://ghostty.org/)** - Currently using
 - **[p10k](https://github.com/romkatv/powerlevel10k)**
 
 ### ⌨ Development Environment
+
 - **[LazyVim](https://www.lazyvim.org/)**
-- **[Tmux](https://github.com/tmux/tmux/wiki)**
 
 ## Notes
+
 For terminal setup, only **`Ghostty`** configurations will be maintained and updated going forward. Alacritty configurations are provided as an alternative option but will not be updated much.
 
 ## License
+
 Do whatever you want with these configs :)
