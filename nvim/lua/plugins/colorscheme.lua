@@ -46,93 +46,93 @@
 -- }
 
 -- rose-pine
--- return {
---   "rose-pine/neovim",
---   name = "rose-pine",
---   config = function()
---     vim.cmd("colorscheme rose-pine")
---     require("rose-pine").setup({
---       variant = "main", -- auto, main, moon, or dawn
---       dark_variant = "main", -- main, moon, or dawn
---       dim_inactive_windows = false,
---       extend_background_behind_borders = true,
---       disable_background = true,
---
---       enable = {
---         terminal = true,
---         legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
---         migrations = true, -- Handle deprecated options automatically
---       },
---
---       styles = {
---         bold = true,
---         italic = true,
---         transparency = true,
---       },
---
---       groups = {
---         border = "muted",
---         link = "iris",
---         panel = "surface",
---
---         error = "love",
---         hint = "iris",
---         info = "foam",
---         note = "pine",
---         todo = "rose",
---         warn = "gold",
---
---         git_add = "foam",
---         git_change = "rose",
---         git_delete = "love",
---         git_dirty = "rose",
---         git_ignore = "muted",
---         git_merge = "iris",
---         git_rename = "pine",
---         git_stage = "iris",
---         git_text = "rose",
---         git_untracked = "subtle",
---
---         h1 = "iris",
---         h2 = "foam",
---         h3 = "rose",
---         h4 = "gold",
---         h5 = "pine",
---         h6 = "foam",
---       },
---
---       palette = {
---         -- Override the builtin palette per variant
---         -- moon = {
---         --     base = '#18191a',
---         --     overlay = '#363738',
---         -- },
---       },
---
---       highlight_groups = {
---         -- Comment = { fg = "foam" },
---         -- VertSplit = { fg = "muted", bg = "muted" },
---       },
---
---       before_highlight = function(group, highlight, palette)
---         -- Disable all undercurls
---         -- if highlight.undercurl then
---         --     highlight.undercurl = false
---         -- end
---         --
---         -- Change palette colour
---         -- if highlight.fg == palette.pine then
---         --     highlight.fg = palette.foam
---         -- end
---       end,
---     })
---
---     vim.cmd("colorscheme rose-pine")
---     -- vim.cmd("colorscheme rose-pine-main")
---     -- vim.cmd("colorscheme rose-pine-moon")
---     -- vim.cmd("colorscheme rose-pine-dawn")
---   end,
--- }
+return {
+  "rose-pine/neovim",
+  name = "rose-pine",
+  config = function()
+    vim.cmd("colorscheme rose-pine")
+    require("rose-pine").setup({
+      variant = "main", -- auto, main, moon, or dawn
+      dark_variant = "main", -- main, moon, or dawn
+      dim_inactive_windows = false,
+      extend_background_behind_borders = true,
+      disable_background = true,
+
+      enable = {
+        terminal = true,
+        legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+        migrations = true, -- Handle deprecated options automatically
+      },
+
+      styles = {
+        bold = true,
+        italic = true,
+        transparency = true,
+      },
+
+      groups = {
+        border = "muted",
+        link = "iris",
+        panel = "surface",
+
+        error = "love",
+        hint = "iris",
+        info = "foam",
+        note = "pine",
+        todo = "rose",
+        warn = "gold",
+
+        git_add = "foam",
+        git_change = "rose",
+        git_delete = "love",
+        git_dirty = "rose",
+        git_ignore = "muted",
+        git_merge = "iris",
+        git_rename = "pine",
+        git_stage = "iris",
+        git_text = "rose",
+        git_untracked = "subtle",
+
+        h1 = "iris",
+        h2 = "foam",
+        h3 = "rose",
+        h4 = "gold",
+        h5 = "pine",
+        h6 = "foam",
+      },
+
+      palette = {
+        -- Override the builtin palette per variant
+        -- moon = {
+        --     base = '#18191a',
+        --     overlay = '#363738',
+        -- },
+      },
+
+      highlight_groups = {
+        -- Comment = { fg = "foam" },
+        -- VertSplit = { fg = "muted", bg = "muted" },
+      },
+
+      before_highlight = function(group, highlight, palette)
+        -- Disable all undercurls
+        -- if highlight.undercurl then
+        --     highlight.undercurl = false
+        -- end
+        --
+        -- Change palette colour
+        -- if highlight.fg == palette.pine then
+        --     highlight.fg = palette.foam
+        -- end
+      end,
+    })
+
+    vim.cmd("colorscheme rose-pine")
+    -- vim.cmd("colorscheme rose-pine-main")
+    -- vim.cmd("colorscheme rose-pine-moon")
+    -- vim.cmd("colorscheme rose-pine-dawn")
+  end,
+}
 
 -- morta
 -- return {
@@ -163,140 +163,140 @@
 -- }
 
 -- xcode theme
-return {
-  {
-    "arzg/vim-colors-xcode",
-    priority = 1000,
-    config = function()
-      -- Set the colorscheme
-      vim.cmd("colorscheme xcodedark")
-      -- Enable terminal GUI colors
-      vim.opt.termguicolors = true
-      -- Function to make highlights transparent
-      local function make_transparent(group)
-        vim.api.nvim_set_hl(0, group, { bg = "NONE", ctermbg = "NONE" })
-      end
-      -- Basic editor elements
-      local transparent_groups = {
-        "Normal",
-        "NormalFloat",
-        "NormalNC", -- Non-current windows
-        "SignColumn",
-        "EndOfBuffer",
-        "CursorLine",
-        "ColorColumn",
-        "VertSplit",
-        "StatusLine",
-        "StatusLineNC",
-        "LineNr",
-        "CursorLineNr",
-        "Folded",
-        "FoldColumn",
-      }
-      -- Plugin-specific elements
-      local plugin_groups = {
-        -- FZF
-        "FzfLuaNormal",
-        "FzfLuaBorder",
-        "FzfLuaPreviewNormal",
-        "FzfLuaPreviewBorder",
-        -- Treesitter
-        -- "TreesitterContext",
-        -- "TreesitterContextLineNumber",
-        -- Neo-tree
-        -- "NeoTreeNormal",
-        -- "NeoTreeNormalNC",
-        -- "NeoTreeFloatBorder",
-        -- "NeoTreeFloatTitle",
-        -- Which-key
-        "WhichKeyFloat",
-        "WhichKeyBorder",
-        -- Telescope
-        -- "TelescopeNormal",
-        -- "TelescopeBorder",
-        -- "TelescopePrompt",
-        -- "TelescopeResults",
-        -- "TelescopePreview",
-        -- "TelescopeTitle",
-        -- LSP
-        "LspFloatWinNormal",
-        "LspFloatWinBorder",
-        "DiagnosticFloat",
-        -- Completion menu
-        -- "Pmenu",
-        -- "PmenuSel",
-        -- "PmenuSbar",
-        -- "PmenuThumb",
-        -- Floating windows
-        "FloatBorder",
-        "FloatTitle",
-        -- Notify
-        "NotifyBackground",
-        -- Bufferline
-        "BufferLineTabClose",
-        "BufferlineBufferSelected",
-        "BufferLineFill",
-        "BufferLineBackground",
-        "BufferLineSeparator",
-        "BufferLineIndicatorSelected",
-      }
-      -- Apply transparency to all groups
-      for _, group in ipairs(transparent_groups) do
-        make_transparent(group)
-      end
-      for _, group in ipairs(plugin_groups) do
-        make_transparent(group)
-      end
-      -- Cursor styling
-      vim.api.nvim_set_hl(0, "Cursor", {
-        bg = "#FFB3CC", -- Xcode pink cursor
-        fg = "NONE", -- Don't change text color
-      })
-      -- Set cursor options
-      vim.opt.guicursor = "n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-iCursor,r-cr:hor20,o:hor50"
-      -- Configure yank highlight
-      vim.api.nvim_set_hl(0, "IncSearch", {
-        bg = "#FFB3CC",
-        fg = "#000000", -- Black text for better contrast
-      })
-      -- Configure matching bracket highlight
-      vim.api.nvim_set_hl(0, "MatchParen", {
-        fg = "#FFB3CC", -- Xcode pink
-        bg = "NONE", -- Slightly darker pink background
-        bold = true, -- Bold text
-        nocombine = true, -- Ensure effects are applied
-      })
-      -- Set floating window and popup menu transparency
-      vim.opt.winblend = 0 -- Set to 0 for full transparency
-      vim.opt.pumblend = 0 -- Set to 0 for full transparency
-      -- Optional: Adjust specific syntax highlighting
-      vim.api.nvim_set_hl(0, "Comment", { fg = "#7F8C98", italic = true })
-      vim.api.nvim_set_hl(0, "Function", { bold = true })
-      -- Completion menu styling for Neovim
-      -- Main completion menu background
-      vim.api.nvim_set_hl(0, "Pmenu", {
-        bg = "#191724", -- Base background
-        fg = "#e0def4", -- Text color
-        bold = false,
-        bg_indexed = true,
-      })
-      -- Selected item in completion menu
-      vim.api.nvim_set_hl(0, "PmenuSel", {
-        bg = "#2a2837", -- Overlay background
-        fg = "#ebbcba", -- Rose color for selected text
-        bold = true,
-      })
-      -- Scrollbar
-      vim.api.nvim_set_hl(0, "PmenuSbar", {
-        bg = "#26233a", -- Subtle highlight background
-      })
-      -- Scrollbar thumb
-      vim.api.nvim_set_hl(0, "PmenuThumb", {
-        bg = "#6e6a86", -- Muted color for scrollbar
-      })
-    end,
-  },
-}
+-- return {
+--   {
+--     "arzg/vim-colors-xcode",
+--     priority = 1000,
+--     config = function()
+--       -- Set the colorscheme
+--       vim.cmd("colorscheme xcodedark")
+--       -- Enable terminal GUI colors
+--       vim.opt.termguicolors = true
+--       -- Function to make highlights transparent
+--       local function make_transparent(group)
+--         vim.api.nvim_set_hl(0, group, { bg = "NONE", ctermbg = "NONE" })
+--       end
+--       -- Basic editor elements
+--       local transparent_groups = {
+--         "Normal",
+--         "NormalFloat",
+--         "NormalNC", -- Non-current windows
+--         "SignColumn",
+--         "EndOfBuffer",
+--         "CursorLine",
+--         "ColorColumn",
+--         "VertSplit",
+--         "StatusLine",
+--         "StatusLineNC",
+--         "LineNr",
+--         "CursorLineNr",
+--         "Folded",
+--         "FoldColumn",
+--       }
+--       -- Plugin-specific elements
+--       local plugin_groups = {
+--         -- FZF
+--         "FzfLuaNormal",
+--         "FzfLuaBorder",
+--         "FzfLuaPreviewNormal",
+--         "FzfLuaPreviewBorder",
+--         -- Treesitter
+--         -- "TreesitterContext",
+--         -- "TreesitterContextLineNumber",
+--         -- Neo-tree
+--         -- "NeoTreeNormal",
+--         -- "NeoTreeNormalNC",
+--         -- "NeoTreeFloatBorder",
+--         -- "NeoTreeFloatTitle",
+--         -- Which-key
+--         "WhichKeyFloat",
+--         "WhichKeyBorder",
+--         -- Telescope
+--         -- "TelescopeNormal",
+--         -- "TelescopeBorder",
+--         -- "TelescopePrompt",
+--         -- "TelescopeResults",
+--         -- "TelescopePreview",
+--         -- "TelescopeTitle",
+--         -- LSP
+--         "LspFloatWinNormal",
+--         "LspFloatWinBorder",
+--         "DiagnosticFloat",
+--         -- Completion menu
+--         -- "Pmenu",
+--         -- "PmenuSel",
+--         -- "PmenuSbar",
+--         -- "PmenuThumb",
+--         -- Floating windows
+--         "FloatBorder",
+--         "FloatTitle",
+--         -- Notify
+--         "NotifyBackground",
+--         -- Bufferline
+--         "BufferLineTabClose",
+--         "BufferlineBufferSelected",
+--         "BufferLineFill",
+--         "BufferLineBackground",
+--         "BufferLineSeparator",
+--         "BufferLineIndicatorSelected",
+--       }
+--       -- Apply transparency to all groups
+--       for _, group in ipairs(transparent_groups) do
+--         make_transparent(group)
+--       end
+--       for _, group in ipairs(plugin_groups) do
+--         make_transparent(group)
+--       end
+--       -- Cursor styling
+--       vim.api.nvim_set_hl(0, "Cursor", {
+--         bg = "#FFB3CC", -- Xcode pink cursor
+--         fg = "NONE", -- Don't change text color
+--       })
+--       -- Set cursor options
+--       vim.opt.guicursor = "n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-iCursor,r-cr:hor20,o:hor50"
+--       -- Configure yank highlight
+--       vim.api.nvim_set_hl(0, "IncSearch", {
+--         bg = "#FFB3CC",
+--         fg = "#000000", -- Black text for better contrast
+--       })
+--       -- Configure matching bracket highlight
+--       vim.api.nvim_set_hl(0, "MatchParen", {
+--         fg = "#FFB3CC", -- Xcode pink
+--         bg = "NONE", -- Slightly darker pink background
+--         bold = true, -- Bold text
+--         nocombine = true, -- Ensure effects are applied
+--       })
+--       -- Set floating window and popup menu transparency
+--       vim.opt.winblend = 0 -- Set to 0 for full transparency
+--       vim.opt.pumblend = 0 -- Set to 0 for full transparency
+--       -- Optional: Adjust specific syntax highlighting
+--       vim.api.nvim_set_hl(0, "Comment", { fg = "#7F8C98", italic = true })
+--       vim.api.nvim_set_hl(0, "Function", { bold = true })
+--       -- Completion menu styling for Neovim
+--       -- Main completion menu background
+--       vim.api.nvim_set_hl(0, "Pmenu", {
+--         bg = "#191724", -- Base background
+--         fg = "#e0def4", -- Text color
+--         bold = false,
+--         bg_indexed = true,
+--       })
+--       -- Selected item in completion menu
+--       vim.api.nvim_set_hl(0, "PmenuSel", {
+--         bg = "#2a2837", -- Overlay background
+--         fg = "#ebbcba", -- Rose color for selected text
+--         bold = true,
+--       })
+--       -- Scrollbar
+--       vim.api.nvim_set_hl(0, "PmenuSbar", {
+--         bg = "#26233a", -- Subtle highlight background
+--       })
+--       -- Scrollbar thumb
+--       vim.api.nvim_set_hl(0, "PmenuThumb", {
+--         bg = "#6e6a86", -- Muted color for scrollbar
+--       })
+--     end,
+--   },
+-- }
 
 -- dracula
 -- return {
