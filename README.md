@@ -14,11 +14,13 @@
 ### ⌨ Development Environment
 
 - **[LazyVim](https://www.lazyvim.org/)**
+- **[Nvim Colourscheme](https://github.com/V4N1LLA-1CE/xcodedark-nvim)**
 
 ## Notes
 
-For terminal setup, only **`Ghostty`** configurations will be maintained and updated going forward. Alacritty configurations are provided as an alternative option but will not be updated much.
+For terminal setup, only **`Ghostty`** configurations will be maintained and updated going forward. Alacritty configurations are provided as an alternative option but will not be updated much. **Photos may also not be up to date!** 
 
 ## License
 
 Do whatever you want with these configs :)
+
