@@ -46,93 +46,104 @@
 -- }
 
 -- rose-pine
-return {
-  "rose-pine/neovim",
-  name = "rose-pine",
-  config = function()
-    vim.cmd("colorscheme rose-pine")
-    require("rose-pine").setup({
-      variant = "main", -- auto, main, moon, or dawn
-      dark_variant = "main", -- main, moon, or dawn
-      dim_inactive_windows = false,
-      extend_background_behind_borders = true,
-      disable_background = true,
-
-      enable = {
-        terminal = true,
-        legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
-        migrations = true, -- Handle deprecated options automatically
-      },
-
-      styles = {
-        bold = true,
-        italic = true,
-        transparency = true,
-      },
-
-      groups = {
-        border = "muted",
-        link = "iris",
-        panel = "surface",
-
-        error = "love",
-        hint = "iris",
-        info = "foam",
-        note = "pine",
-        todo = "rose",
-        warn = "gold",
-
-        git_add = "foam",
-        git_change = "rose",
-        git_delete = "love",
-        git_dirty = "rose",
-        git_ignore = "muted",
-        git_merge = "iris",
-        git_rename = "pine",
-        git_stage = "iris",
-        git_text = "rose",
-        git_untracked = "subtle",
-
-        h1 = "iris",
-        h2 = "foam",
-        h3 = "rose",
-        h4 = "gold",
-        h5 = "pine",
-        h6 = "foam",
-      },
-
-      palette = {
-        -- Override the builtin palette per variant
-        -- moon = {
-        --     base = '#18191a',
-        --     overlay = '#363738',
-        -- },
-      },
-
-      highlight_groups = {
-        -- Comment = { fg = "foam" },
-        -- VertSplit = { fg = "muted", bg = "muted" },
-      },
-
-      before_highlight = function(group, highlight, palette)
-        -- Disable all undercurls
-        -- if highlight.undercurl then
-        --     highlight.undercurl = false
-        -- end
-        --
-        -- Change palette colour
-        -- if highlight.fg == palette.pine then
-        --     highlight.fg = palette.foam
-        -- end
-      end,
-    })
-
-    vim.cmd("colorscheme rose-pine")
-    -- vim.cmd("colorscheme rose-pine-main")
-    -- vim.cmd("colorscheme rose-pine-moon")
-    -- vim.cmd("colorscheme rose-pine-dawn")
-  end,
-}
+-- return {
+--   "rose-pine/neovim",
+--   name = "rose-pine",
+--   config = function()
+--     vim.cmd("colorscheme rose-pine")
+--     vim.opt.termguicolors = true
+--     require("rose-pine").setup({
+--       variant = "main", -- auto, main, moon, or dawn
+--       dark_variant = "main", -- main, moon, or dawn
+--       dim_inactive_windows = false,
+--       extend_background_behind_borders = true,
+--       disable_background = true,
+--
+--       enable = {
+--         terminal = true,
+--         legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+--         migrations = true, -- Handle deprecated options automatically
+--       },
+--
+--       styles = {
+--         bold = true,
+--         italic = true,
+--         transparency = true,
+--       },
+--
+--       groups = {
+--         border = "muted",
+--         link = "iris",
+--         panel = "surface",
+--
+--         error = "love",
+--         hint = "iris",
+--         info = "foam",
+--         note = "pine",
+--         todo = "rose",
+--         warn = "gold",
+--
+--         git_add = "foam",
+--         git_change = "rose",
+--         git_delete = "love",
+--         git_dirty = "rose",
+--         git_ignore = "muted",
+--         git_merge = "iris",
+--         git_rename = "pine",
+--         git_stage = "iris",
+--         git_text = "rose",
+--         git_untracked = "subtle",
+--
+--         h1 = "iris",
+--         h2 = "foam",
+--         h3 = "rose",
+--         h4 = "gold",
+--         h5 = "pine",
+--         h6 = "foam",
+--       },
+--
+--       palette = {
+--         -- Override the builtin palette per variant
+--         -- moon = {
+--         --     base = '#18191a',
+--         --     overlay = '#363738',
+--         -- },
+--       },
+--
+--       highlight_groups = {
+--         -- Comment = { fg = "foam" },
+--         -- VertSplit = { fg = "muted", bg = "muted" },
+--         StatusLine = { bg = "none" },
+--         StatusLineNC = { bg = "none" },
+--
+--         lualine_c_normal = { bg = "none" },
+--         lualine_c_insert = { bg = "none" },
+--         lualine_c_visual = { bg = "none" },
+--         lualine_c_replace = { bg = "none" },
+--         lualine_c_command = { bg = "none" },
+--         lualine_c_terminal = { bg = "none" },
+--         lualine_c_inactive = { bg = "none" },
+--       },
+--
+--       before_highlight = function(group, highlight, palette)
+--         -- Disable all undercurls
+--         -- if highlight.undercurl then
+--         --     highlight.undercurl = false
+--         -- end
+--         --
+--         -- Change palette colour
+--         -- if highlight.fg == palette.pine then
+--         --     highlight.fg = palette.foam
+--         -- end
+--       end,
+--     })
+--
+--     vim.cmd("colorscheme rose-pine")
+--     -- vim.cmd("colorscheme rose-pine-main")
+--     -- vim.cmd("colorscheme rose-pine-moon")
+--     -- vim.cmd("colorscheme rose-pine-dawn")
+--   end,
+-- }
 
 -- morta
 -- return {
@@ -721,3 +732,77 @@ return {
 --     })
 --   end,
 -- }
+
+-- return {
+--   "neanias/everforest-nvim",
+--   priority = 1000,
+--   lazy = false,
+--   version = false,
+--   config = function()
+--     require("everforest").setup({
+--       background = "medium", -- hard, medium(default), soft
+--       transparent_background_level = 2, -- 0 = no transparency, 1 = partial, 2 = full transparency
+--       italics = true,
+--       disable_italic_comments = false,
+--       sign_column_background = "none", -- or "grey"
+--       ui_contrast = "low", -- "low", "normal", or "high"
+--       dim_inactive_windows = false,
+--       diagnostic_text_highlight = false,
+--       diagnostic_virtual_text = "coloured", -- "grey", "coloured", or "none"
+--       diagnostic_line_highlight = false,
+--       spell_foreground = false,
+--       show_eob = true, -- show end of buffer tildes
+--       float_style = "dim", -- "bright" or "dim"
+--       inlay_hints_background = "none", -- "none" or "dimmed"
+--       on_highlights = function(hl, palette)
+--         -- Custom highlight overrides can go here
+--         -- Example: hl.Comment = { fg = palette.grey1, italic = true }
+--       end,
+--       colours_override = function(palette)
+--         -- Custom color overrides can go here
+--         -- Example: palette.bg0 = "#1e1e1e"
+--       end,
+--     })
+--
+--     -- Set the colorscheme
+--     vim.cmd("colorscheme everforest")
+--   end,
+-- }
+
+-- return {
+--   "sainnhe/gruvbox-material",
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--     -- Optional: Configure the colorscheme
+--     vim.g.gruvbox_material_enable_italic = true
+--     vim.g.gruvbox_material_background = "hard" -- or 'medium', 'soft'
+--     vim.g.gruvbox_material_enable_bold = true
+--     vim.g.gruvbox_material_transparent_background = 2 -- Enable transparency, 0 1 2
+--
+--     -- Load the colorscheme
+--     vim.cmd.colorscheme("gruvbox-material")
+--   end,
+-- }
+
+return {
+  "V4N1LLA-1CE/xcodedark-nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require("xcodedark").setup({
+      transparent = true,
+      integrations = {
+        telescope = true,
+        nvim_tree = true,
+        gitsigns = true,
+        bufferline = true,
+        incline = true,
+        lazygit = true,
+        which_key = true,
+        notify = true,
+      },
+    })
+    vim.cmd.colorscheme("xcodedark")
+  end,
+}
