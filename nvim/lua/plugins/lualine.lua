@@ -76,7 +76,12 @@ return {
 
         -- center components
         lualine_c = {
-          { "encoding", icon = " " },
+          {
+            "encoding",
+            icon = " ",
+            "filename",
+            color = { bg = "NONE" },
+          },
         },
         lualine_x = {
           { "diagnostics", sources = { "nvim_lsp" }, sections = { "error", "warn" }, always_visible = true },
