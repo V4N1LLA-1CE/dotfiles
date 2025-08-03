@@ -12,10 +12,13 @@ theme = catppuccin-mocha
 # theme = xcodedarkhc
 #
 # # font
-font-size = 17
-font-family = CaskaydiaCove Nerd Font
+font-size = 14
+# font-family = CaskaydiaCove Nerd Font
 # font-family = JetBrains Mono
 # font-family = MesloLGS Nerd Font Mono
+font-family = SF Mono
+font-style = Medium
+font-family-bold = SF Mono Bold
 
 # background
 background-blur-radius = 30
