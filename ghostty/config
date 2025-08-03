@@ -1,6 +1,6 @@
 # themes
-#
-theme = catppuccin-mocha
+
+# theme = catppuccin-mocha
 # theme = rose-pine
 # theme = Github Dark
 # theme = Kanagawa Wave
@@ -10,9 +10,10 @@ theme = catppuccin-mocha
 # theme = iceberg-dark
 # theme = nord
 # theme = xcodedarkhc
-#
-# # font
-font-size = 14
+theme = xcodedark
+
+# font
+font-size = 13
 # font-family = CaskaydiaCove Nerd Font
 # font-family = JetBrains Mono
 # font-family = MesloLGS Nerd Font Mono
