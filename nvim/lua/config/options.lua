@@ -33,3 +33,7 @@ vim.diagnostic.config({
 })
 
 vim.opt.shortmess:append("A")
+
+-- disable indent lines
+vim.opt.list = false
+vim.opt.listchars = ""
