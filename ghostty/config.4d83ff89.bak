@@ -45,4 +45,3 @@ bold-is-bright = true
 auto-update = download
 auto-update-channel = stable
 macos-option-as-alt=true
-keybind = shift+enter=text:\n
