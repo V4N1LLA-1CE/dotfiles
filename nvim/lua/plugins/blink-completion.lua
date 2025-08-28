@@ -10,21 +10,22 @@ return {
     },
     completion = {
       menu = {
+        auto_show = true,
         border = "rounded",
         winhighlight = "Normal:BlinkCmpMenu,FloatBorder:BlinkCmpMenuBorder,CursorLine:BlinkCmpMenuSelection,Search:None",
         scrollbar = true,
       },
     },
     documentation = {
+      auto_show = true,
       window = {
         border = "rounded",
-        winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,EndOfBuffer:BlinkCmpDoc",
       },
     },
   },
   config = function(_, opts)
     require("blink.cmp").setup(opts)
-    
+
     -- Custom highlight groups for proper rounded border background
     vim.api.nvim_set_hl(0, "BlinkCmpMenu", {
       bg = "NONE",
@@ -35,10 +36,10 @@ return {
       fg = "#FF7AB2", -- Xcode pink for border
     })
     vim.api.nvim_set_hl(0, "BlinkCmpMenuSelection", {
-      bg = "#5C2E91",
+      bg = "#4A1F3D",
       fg = "#FF7AB2",
     })
-    
+
     -- Scrollbar styling to match theme
     vim.api.nvim_set_hl(0, "PmenuSbar", {
       bg = "NONE",
@@ -46,7 +47,7 @@ return {
     vim.api.nvim_set_hl(0, "PmenuThumb", {
       bg = "#FF7AB2",
     })
-    
+
     -- Documentation window styling
     vim.api.nvim_set_hl(0, "BlinkCmpDoc", {
       bg = "NONE",
