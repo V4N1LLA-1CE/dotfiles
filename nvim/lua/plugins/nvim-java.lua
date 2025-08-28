@@ -1,5 +1,6 @@
 return {
-  enabled = false,
+  lazy = true,
+  enabled = true,
   "elmcgill/springboot-nvim",
   dependencies = {
     "neovim/nvim-lspconfig",
