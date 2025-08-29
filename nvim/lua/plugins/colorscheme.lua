@@ -804,5 +804,28 @@ return {
       },
     })
     vim.cmd.colorscheme("xcodedark")
+    
+    -- Enhanced line number styling
+    vim.api.nvim_set_hl(0, "LineNr", { 
+      fg = "#6C7B95", -- Muted gray for relative numbers
+      bg = "NONE" 
+    })
+    
+    vim.api.nvim_set_hl(0, "CursorLineNr", { 
+      fg = "#4b1f3d", -- Your suggested color for current line
+      bg = "NONE",
+      bold = true 
+    })
+    
+    -- Optional: Add a subtle background to current line number area
+    vim.api.nvim_set_hl(0, "LineNrAbove", { 
+      fg = "#5A6B82", -- Slightly different for above lines
+      bg = "NONE" 
+    })
+    
+    vim.api.nvim_set_hl(0, "LineNrBelow", { 
+      fg = "#5A6B82", -- Slightly different for below lines
+      bg = "NONE" 
+    })
   end,
 }
