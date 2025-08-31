@@ -51,5 +51,5 @@
   "venv-selector.nvim": { "branch": "regexp", "commit": "d2326e7433fdeb10f7d0d1237c18b91b353f9f8b" },
   "vim-tmux-navigator": { "branch": "master", "commit": "c45243dc1f32ac6bcf6068e5300f3b2b237e576a" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },
-  "xcodedark-nvim": { "branch": "main", "commit": "64e5ab93fe3aeb61348639c224c07a4f54370cf7" }
+  "xcodedark-nvim": { "branch": "main", "commit": "b30bc2b3342212492ad12ecfa621127184cd2079" }
 }

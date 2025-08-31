@@ -18,9 +18,12 @@ font-size = 14
 # font-family = CaskaydiaCove Nerd Font
 # font-family = JetBrains Mono
 # font-family = MesloLGS Nerd Font Mono
-font-family = SF Mono
+font-family = FiraCode Nerd Font Mono
 font-style = Medium
-font-family-bold = SF Mono Heavy
+
+# font-family = SF Mono
+# font-style = Medium
+# font-family-bold = SF Mono Heavy
 
 # background
 background-blur-radius = 40
