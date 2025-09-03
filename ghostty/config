@@ -20,6 +20,7 @@ font-size = 14
 # font-family = MesloLGS Nerd Font Mono
 font-family = FiraCode Nerd Font Mono
 font-style = Medium
+font-family-bold = Semibold
 
 # font-family = SF Mono
 # font-style = Medium
