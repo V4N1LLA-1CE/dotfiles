@@ -15,15 +15,23 @@ theme = rose-pine
 
 # font
 font-size = 14
+
 # font-family = CaskaydiaCove Nerd Font
-# font-family = JetBrains Mono
-# font-family = MesloLGS Nerd Font Mono
-font-family = FiraCode Nerd Font Mono
+# font-style = Semibold
+# font-family-bold = Bold
+
+font-family = JetBrains Mono 
 font-style = Medium
-font-family-bold = Semibold
+font-family-bold = Heavy
+
+# font-family = MesloLGS Nerd Font Mono
+
+# font-family = FiraCode Nerd Font Mono
+# font-style = Medium
+# font-family-bold = Semibold
 
 # font-family = SF Mono
-# font-style = Medium
+# font-style = Bold
 # font-family-bold = SF Mono Heavy
 
 # background
