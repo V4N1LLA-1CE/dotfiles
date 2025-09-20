@@ -5,3 +5,5 @@ tmux/plugins/*
 gh/
 
 configstore/
+
+swiftpm/
