@@ -1,7 +1,7 @@
 # themes
 
 # theme = catppuccin-mocha
-theme = rose-pine
+theme = rose pine 
 # theme = Github Dark
 # theme = Kanagawa Wave
 # theme = Mellow
@@ -58,3 +58,6 @@ auto-update = download
 auto-update-channel = stable
 macos-option-as-alt=true
 keybind = shift+enter=text:\n
+window-theme = "auto"
+
+
