@@ -5,6 +5,14 @@ vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.showbreak = "↪ "
+vim.opt.breakindent = true
+vim.opt.breakindentopt = "shift:2,min:40,sbr"
+vim.opt.textwidth = 0
+vim.opt.wrapmargin = 0
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -21,7 +29,6 @@ vim.opt.scrolloff = 10
 vim.opt.inccommand = "split"
 vim.opt.ignorecase = true
 vim.opt.smarttab = true
-vim.opt.breakindent = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.backspace = { "start", "eol", "indent" }
