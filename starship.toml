@@ -30,9 +30,9 @@ error_symbol = "[✗](bold red)"
 
 [git_status]
 format = '([\[$modified$staged$renamed$deleted\]](bold red) )([\[$ahead_behind\]](bold red) )'
-ahead = '⇡${count}'
-behind = '⇣${count}'
-diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+ahead = '↑${count}'
+behind = '↓${count}'
+diverged = '↑${ahead_count}↓${behind_count}'
 
 ### end of configs ###
 
