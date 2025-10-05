@@ -58,10 +58,14 @@ return {
               },
               maven = {
                 downloadSources = true,
+                downloadJavadoc = true,
                 updateSnapshots = true,
               },
               eclipse = {
                 downloadSources = true,
+              },
+              format = {
+                enabled = true,
               },
               references = {
                 includeDecompiledSources = true,
@@ -86,6 +90,7 @@ return {
           },
         },
       })
+      require("lspconfig").jdtls.setup({})
     end,
   },
 }
