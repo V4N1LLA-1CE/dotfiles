@@ -45,21 +45,47 @@ return {
         jdk = {
           auto_install = true,
         },
+        jdtls = {
+          settings = {
+            java = {
+              configuration = {
+                runtimes = {
+                  {
+                    name = "JavaSE-17",
+                    path = vim.fn.expand("~/.local/share/nvim/mason/packages/openjdk-17/jdk-17.0.2.jdk/Contents/Home"),
+                  },
+                },
+              },
+              maven = {
+                downloadSources = true,
+                updateSnapshots = true,
+              },
+              eclipse = {
+                downloadSources = true,
+              },
+              references = {
+                includeDecompiledSources = true,
+              },
+              implementationsCodeLens = {
+                enabled = true,
+              },
+              referencesCodeLens = {
+                enabled = true,
+              },
+              completion = {
+                favoriteStaticMembers = {},
+                filteredTypes = {},
+              },
+              sources = {
+                organizeImports = {
+                  starThreshold = 9999,
+                  staticStarThreshold = 9999,
+                },
+              },
+            },
+          },
+        },
       })
     end,
-  },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        jdtls = {},
-      },
-      setup = {
-        jdtls = function()
-          require("lspconfig").jdtls.setup({})
-          return true
-        end,
-      },
-    },
   },
 }

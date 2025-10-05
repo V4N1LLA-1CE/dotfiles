@@ -1,29 +1,44 @@
 return {
   "saghen/blink.cmp",
-  opts = {
-    keymap = {
+  opts = function(_, opts)
+    opts.sources = {
+      default = { "lsp", "path", "snippets", "buffer" },
+    }
+    opts.keymap = {
       preset = "default",
       ["<Tab>"] = { "accept", "fallback" },
-    },
-    appearance = {
+    }
+    opts.appearance = {
       use_nvim_cmp_as_default = true,
-    },
-    completion = {
+    }
+    opts.completion = {
       menu = {
         auto_show = true,
         border = "rounded",
         winhighlight = "Normal:BlinkCmpMenu,FloatBorder:BlinkCmpMenuBorder,CursorLine:BlinkCmpMenuSelection,Search:None",
         scrollbar = true,
       },
-    },
-    documentation = {
-      auto_show = true,
-      window = {
-        border = "rounded",
+      documentation = {
+        auto_show = true,
+        auto_show_delay_ms = 200,
+        treesitter_highlighting = true,
+        window = {
+          border = "rounded",
+          min_width = 10,
+          max_width = 80,
+          max_height = 30,
+          scrollbar = true,
+        },
       },
-    },
-  },
+    }
+    return opts
+  end,
   config = function(_, opts)
+    -- Ensure sources.compat is removed
+    if opts.sources and opts.sources.compat then
+      opts.sources.compat = nil
+    end
+
     require("blink.cmp").setup(opts)
 
     -- Custom highlight groups for proper rounded border background
@@ -56,6 +71,11 @@ return {
     vim.api.nvim_set_hl(0, "BlinkCmpDocBorder", {
       bg = "NONE",
       fg = "#FF7AB2",
+    })
+
+    -- Additional documentation window highlights
+    vim.api.nvim_set_hl(0, "BlinkCmpDocCursorLine", {
+      bg = "#4A1F3D",
     })
   end,
 }
