@@ -25,6 +25,11 @@ return {
       -- Set JAVA_HOME to use Mason's OpenJDK 17 for running jdtls
       vim.env.JAVA_HOME = vim.fn.expand("~/.local/share/nvim/mason/packages/openjdk-17/jdk-17.0.2.jdk/Contents/Home")
 
+      local lombok_path = vim.fn.expand("~/.local/share/nvim/mason/packages/jdtls/lombok.jar")
+
+      -- Set the environment variable that jdtls wrapper scripts use
+      vim.env.JDTLS_JVM_ARGS = "-javaagent:" .. lombok_path
+
       require("java").setup({
         root_markers = {
           "settings.gradle",
@@ -45,9 +50,16 @@ return {
         jdk = {
           auto_install = true,
         },
+        notifications = {
+          dap = false,
+        },
         jdtls = {
+          jvm_args = {
+            "-javaagent:" .. lombok_path,
+          },
           settings = {
             java = {
+              signatureHelp = { enabled = true },
               configuration = {
                 runtimes = {
                   {
@@ -64,6 +76,9 @@ return {
               eclipse = {
                 downloadSources = true,
               },
+              autobuild = {
+                enabled = true,
+              },
               format = {
                 enabled = true,
               },
@@ -79,6 +94,11 @@ return {
               completion = {
                 favoriteStaticMembers = {},
                 filteredTypes = {},
+                maxResults = 0,
+                guessMethodArguments = true,
+              },
+              contentProvider = {
+                preferred = "fernflower",
               },
               sources = {
                 organizeImports = {
@@ -90,6 +110,7 @@ return {
           },
         },
       })
+
       require("lspconfig").jdtls.setup({})
     end,
   },
