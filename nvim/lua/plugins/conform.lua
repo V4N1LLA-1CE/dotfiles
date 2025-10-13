@@ -11,9 +11,5 @@ return {
         stdin = true,
       },
     },
-    -- Disable LSP formatting for Java (use google-java-format instead)
-    format_on_save = {
-      lsp_format = "fallback",
-    },
   },
 }

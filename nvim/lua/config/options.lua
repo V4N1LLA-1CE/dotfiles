@@ -1,8 +1,5 @@
 vim.g.mapleader = " "
 
--- Keep root directory at the original starting directory (where you ran vim .)
-vim.g.root_spec = { "cwd" }
-
 vim.opt.cursorline = false
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
