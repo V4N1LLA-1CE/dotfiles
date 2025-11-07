@@ -3,6 +3,7 @@ return {
   opts = {
     formatters_by_ft = {
       java = { "google-java-format" },
+      xml = { "xmllint" },
     },
     formatters = {
       ["google-java-format"] = {

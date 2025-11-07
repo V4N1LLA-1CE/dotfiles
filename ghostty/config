@@ -21,8 +21,7 @@ font-size = 14
 # font-family-bold = Bold
 
 font-family = JetBrains Mono 
-font-style = Medium
-font-family-bold = Heavy
+font-style = Bold
 
 # font-family = MesloLGS Nerd Font Mono
 
