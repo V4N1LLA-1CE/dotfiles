@@ -10,8 +10,11 @@ theme = rose pine
 # theme = Ayu Mirage
 # theme = iceberg-dark
 # theme = nord
-# theme = xcodedarkhc
-# theme = xcodedark
+# theme = Xcode Dark hc
+# theme = Xcode Dark 
+# theme = Xcode WWDC
+# theme = sakura
+
 
 # font
 font-size = 14

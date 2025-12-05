@@ -38,6 +38,10 @@ return {
               downloadJavadoc = true,
               updateSnapshots = true,
             },
+            gradle = {
+              downloadSources = true,
+              downloadJavadoc = true,
+            },
             eclipse = {
               downloadSources = true,
             },
