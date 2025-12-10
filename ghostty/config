@@ -17,11 +17,10 @@ theme = rose pine
 
 
 # font
-font-size = 14
+font-size = 18
 
 # font-family = CaskaydiaCove Nerd Font
 # font-style = Semibold
-# font-family-bold = Bold
 
 font-family = JetBrains Mono 
 font-style = Bold
@@ -37,7 +36,7 @@ font-style = Bold
 # font-family-bold = SF Mono Heavy
 
 # background
-background-blur-radius = 40
+background-blur-radius = 25
 background-opacity = 0.9
 
 # window settings
