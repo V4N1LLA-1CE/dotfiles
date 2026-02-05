@@ -60,5 +60,4 @@ auto-update-channel = stable
 macos-option-as-alt=true
 keybind = shift+enter=text:\n
 window-theme = "auto"
-
-
+macos-titlebar-style = tabs
