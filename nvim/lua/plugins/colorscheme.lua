@@ -186,7 +186,16 @@ return {
       },
 
       -- Override highlights or add new highlights
-      on_highlights = function(highlights, colors) end,
+      on_highlights = function(highlights, colors)
+        -- Make TabLine transparent (bufferline uses this)
+        highlights.TabLine = { bg = "NONE" }
+        highlights.TabLineFill = { bg = "NONE" }
+        highlights.TabLineSel = { bg = "NONE" }
+
+        -- Make StatusLine transparent (lualine uses this)
+        highlights.StatusLine = { bg = "NONE" }
+        highlights.StatusLineNC = { bg = "NONE" }
+      end,
 
       -- Override colors
       colors = {

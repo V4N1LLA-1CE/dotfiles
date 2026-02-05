@@ -33,12 +33,13 @@ return {
     -- themes:
     -- horizon, everforest, dracula, modus-vivendi, catppuccin, rose-pine, morta
     local custom = require("lualine.themes.horizon") -- !!!change lualine theme here!!!
-    custom.normal.c.bg = "none"
-    custom.insert.c.bg = "none"
-    custom.visual.c.bg = "none"
-    custom.replace.c.bg = "none"
-    custom.command.c.bg = "none"
-    custom.inactive.c.bg = "none"
+    local NO_BG = "NONE"
+    custom.normal.c.bg = NO_BG
+    custom.insert.c.bg = NO_BG
+    custom.visual.c.bg = NO_BG
+    custom.replace.c.bg = NO_BG
+    custom.command.c.bg = NO_BG
+    custom.inactive.c.bg = NO_BG
 
     require("lualine").setup({
       options = {
@@ -80,7 +81,7 @@ return {
             "encoding",
             icon = " ",
             "filename",
-            color = { bg = "NONE" },
+            color = { bg = NO_BG },
           },
         },
         lualine_x = {
