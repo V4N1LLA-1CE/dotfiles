@@ -85,7 +85,12 @@ return {
           },
         },
         lualine_x = {
-          { "diagnostics", sources = { "nvim_lsp" }, sections = { "error", "warn" }, always_visible = true },
+          {
+            "diagnostics",
+            sources = { "nvim_lsp" },
+            sections = { "error", "warn" },
+            always_visible = true,
+          },
         },
 
         lualine_y = {

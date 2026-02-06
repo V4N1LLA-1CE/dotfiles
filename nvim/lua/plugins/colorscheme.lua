@@ -117,6 +117,7 @@
 --         which_key = true,
 --         notify = true,
 --       },
+--       color_overrides = {},
 --     })
 --     vim.cmd.colorscheme("xcodedark")
 --   end,
@@ -185,22 +186,10 @@ return {
         },
       },
 
-      -- Override highlights or add new highlights
-      on_highlights = function(highlights, colors)
-        -- Make TabLine transparent (bufferline uses this)
-        highlights.TabLine = { bg = "NONE" }
-        highlights.TabLineFill = { bg = "NONE" }
-        highlights.TabLineSel = { bg = "NONE" }
-
-        -- Make StatusLine transparent (lualine uses this)
-        highlights.StatusLine = { bg = "NONE" }
-        highlights.StatusLineNC = { bg = "NONE" }
-      end,
-
       -- Override colors
       colors = {
         bg = "#141415",
-        inactiveBg = "#1c1c24",
+        inactiveBg = "none",
         fg = "#cdcdcd",
         floatBorder = "#878787",
         line = "#252530",
