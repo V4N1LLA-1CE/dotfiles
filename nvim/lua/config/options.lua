@@ -36,9 +36,9 @@ vim.opt.path:append({ "**" })
 -- vim.opt.mouse = ""
 vim.opt.formatoptions:append({ "r" })
 
-vim.diagnostic.config({
-  virtual_text = false,
-})
+-- vim.diagnostic.config({
+--   virtual_text = false,
+-- })
 
 vim.opt.shortmess:append("A")
 
