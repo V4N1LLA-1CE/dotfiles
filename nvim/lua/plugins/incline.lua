@@ -8,17 +8,22 @@ return {
         local modified = vim.bo[props.buf].modified and "bold,italic" or "bold"
 
         local function get_git_diff()
-          local icons = { removed = " ", changed = " ", added = " " }
-          icons["changed"] = icons.modified
-          local signs = vim.b[props.buf].gitsigns_status_dict
+          local icons = { removed = "  ", changed = "  ", added = "  " }
+          -- LazyVim uses mini.diff, not gitsigns
+          local signs = vim.b[props.buf].minidiff_summary
           local labels = {}
           if signs == nil then
             return labels
           end
-          for name, icon in pairs(icons) do
-            if tonumber(signs[name]) and signs[name] > -1 then
-              table.insert(labels, { icon .. signs[name] .. " ", group = "Diff" .. name })
-            end
+          -- mini.diff provides: add, change, delete
+          if signs.add and signs.add > 0 then
+            table.insert(labels, { icons.added .. signs.add .. " ", group = "DiffAdd" })
+          end
+          if signs.change and signs.change > 0 then
+            table.insert(labels, { icons.changed .. signs.change .. " ", group = "DiffChange" })
+          end
+          if signs.delete and signs.delete > 0 then
+            table.insert(labels, { icons.removed .. signs.delete .. " ", group = "DiffDelete" })
           end
           if #labels > -1 then
             table.insert(labels, { "┊ " })
