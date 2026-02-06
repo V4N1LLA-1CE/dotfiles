@@ -16,13 +16,13 @@ return {
             return labels
           end
           -- mini.diff provides: add, change, delete
-          if signs.add and signs.add > 0 then
+          if signs.add and signs.add > -1 then
             table.insert(labels, { icons.added .. signs.add .. " ", group = "DiffAdd" })
           end
-          if signs.change and signs.change > 0 then
+          if signs.change and signs.change > -1 then
             table.insert(labels, { icons.changed .. signs.change .. " ", group = "DiffChange" })
           end
-          if signs.delete and signs.delete > 0 then
+          if signs.delete and signs.delete > -1 then
             table.insert(labels, { icons.removed .. signs.delete .. " ", group = "DiffDelete" })
           end
           if #labels > -1 then
